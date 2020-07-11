@@ -15,13 +15,17 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        int[] tabIcons = new int[]{R.mipmap.ic_launcher,R.mipmap.ic_launcher,R.mipmap.ic_launcher,R.mipmap.ic_launcher};
         ViewPager main_viewPager = findViewById(R.id.main_viewPager);
         TabLayout tabLayout = findViewById(R.id.tabLayout);
 
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager(),1);
         main_viewPager.setAdapter(viewPagerAdapter);
         tabLayout.setupWithViewPager(main_viewPager);
+        tabLayout.getTabAt(0).setIcon(tabIcons[0]);
+        tabLayout.getTabAt(1).setIcon(tabIcons[1]);
+        tabLayout.getTabAt(2).setIcon(tabIcons[2]);
+        tabLayout.getTabAt(3).setIcon(tabIcons[3]);
 
 
 //        BottomNavigationView main_bottomNavigationView = findViewById(R.id.main_bottomNavigationView);

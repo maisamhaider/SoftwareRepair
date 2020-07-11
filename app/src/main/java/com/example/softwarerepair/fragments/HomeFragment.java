@@ -25,7 +25,7 @@ public class HomeFragment extends Fragment {
     private String mParam2;
 
 
-    public static HomeFragment newInstance(String param1) {
+    public static HomeFragment newInstance() {
         return new HomeFragment();
     }
 

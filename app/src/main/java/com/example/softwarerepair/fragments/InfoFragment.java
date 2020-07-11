@@ -30,7 +30,7 @@ public class InfoFragment extends Fragment {
     }
 
 
-    public static InfoFragment newInstance(String param1 ) {
+    public static InfoFragment newInstance(  ) {
 
         return new InfoFragment();
     }

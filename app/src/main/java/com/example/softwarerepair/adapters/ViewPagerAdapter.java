@@ -27,13 +27,13 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
 
         switch (position) {
             case 0:
-                return HomeFragment.newInstance(StringsAnnotations.HOME);
+                return HomeFragment.newInstance();
             case 1:
-                return ToolsFragment.newInstance(StringsAnnotations.TOOLS);
+                return ToolsFragment.newInstance();
             case 2:
-                return InfoFragment.newInstance(StringsAnnotations.INFO);
+                return InfoFragment.newInstance( );
             case 3:
-                return MoreFragment.newInstance(StringsAnnotations.MORE);
+                return MoreFragment.newInstance();
 
             default:
                 return null;
@@ -46,7 +46,7 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
         return TAB_TITLES[position];
     }
 
-    
+
 
     @Override
     public int getCount() {

@@ -29,7 +29,7 @@ public class MoreFragment extends Fragment {
         // Required empty public constructor
     }
 
-    public static MoreFragment newInstance(String param1) {
+    public static MoreFragment newInstance() {
         return new MoreFragment();
     }
 

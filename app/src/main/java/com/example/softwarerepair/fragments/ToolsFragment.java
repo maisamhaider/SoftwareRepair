@@ -29,7 +29,7 @@ public class ToolsFragment extends Fragment {
         // Required empty public constructor
     }
 
-    public static ToolsFragment newInstance(String param1) {
+    public static ToolsFragment newInstance( ) {
         return new ToolsFragment();
     }
 
