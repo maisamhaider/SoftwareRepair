@@ -38,29 +38,42 @@ public class InfoFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
        View view = inflater.inflate(R.layout.fragment_info, container, false);
-       view.findViewById(R.id.bluetoothInfo_button).setOnClickListener(v -> {
+       view.findViewById(R.id.infoBluetooth_cl).setOnClickListener(v -> {
            Intent intent = new Intent(getContext(), BluetoothInfoActivity.class) ;
            getActivity().startActivity(intent);
        });
-       view.findViewById(R.id.processorInfo_button).setOnClickListener(v -> {
+       view.findViewById(R.id.infoProcessor_cl).setOnClickListener(v -> {
            Intent intent = new Intent(getContext(), ProcessorInfoActivity.class) ;
            getActivity().startActivity(intent);
        });
-       view.findViewById(R.id.sensorInfo_button).setOnClickListener(v -> {
+       view.findViewById(R.id.infoSensor_cl).setOnClickListener(v -> {
            Intent intent = new Intent(getContext(), SensorInfoActivity.class) ;
            getActivity().startActivity(intent);
        });
-       view.findViewById(R.id.features_button).setOnClickListener(v -> {
+       view.findViewById(R.id.infoFeatures_cl).setOnClickListener(v -> {
            Intent intent = new Intent(getContext(), FeaturesActivity.class) ;
            getActivity().startActivity(intent);
        });
-       view.findViewById(R.id.mobileInfo_button).setOnClickListener(v -> {
+       view.findViewById(R.id.infoMobile_cl).setOnClickListener(v -> {
            Intent intent = new Intent(getContext(), HardwareInfoActivity.class) ;
            getActivity().startActivity(intent);
        });
-       view.findViewById(R.id.displayInfo_button).setOnClickListener(v -> {
+       view.findViewById(R.id.infoDisplay_cl).setOnClickListener(v -> {
            Intent intent = new Intent(getContext(), DisplayInfoActivity.class) ;
            getActivity().startActivity(intent);
+       });
+
+       view.findViewById(R.id.infoBattery_cl).setOnClickListener(v -> {
+//           Intent intent = new Intent(getContext(), DisplayInfoActivity.class) ;
+//           getActivity().startActivity(intent);
+       });
+       view.findViewById(R.id.infoStorageAndRam_cl).setOnClickListener(v -> {
+//           Intent intent = new Intent(getContext(), DisplayInfoActivity.class) ;
+//           getActivity().startActivity(intent);
+       });
+       view.findViewById(R.id.infoCamera_cl).setOnClickListener(v -> {
+//           Intent intent = new Intent(getContext(), DisplayInfoActivity.class) ;
+//           getActivity().startActivity(intent);
        });
         return view;
     }

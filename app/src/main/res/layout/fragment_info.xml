@@ -5,76 +5,7 @@
     android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".fragments.InfoFragment">
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
 
-            <Button
-                android:text="bluetoothInfo"
-                android:id="@+id/bluetoothInfo_button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-            <Button
-                android:text="processorInfo"
-                android:id="@+id/processorInfo_button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-            <Button
-                android:text="SensorInfo"
-                android:id="@+id/sensorInfo_button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-            <Button
-                android:text="Features"
-                android:id="@+id/features_button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-            <Button
-                android:text="mobile"
-                android:id="@+id/mobileInfo_button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-            <Button
-                android:text="display Info"
-                android:id="@+id/displayInfo_button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-        </LinearLayout>
-    </ScrollView>
-
-
+    <include layout="@layout/info_xml"/>
 
 </LinearLayout>

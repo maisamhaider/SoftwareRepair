@@ -46,8 +46,6 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
         return TAB_TITLES[position];
     }
 
-
-
     @Override
     public int getCount() {
         return 4;

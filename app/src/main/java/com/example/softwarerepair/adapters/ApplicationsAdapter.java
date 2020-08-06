@@ -21,7 +21,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.softwarerepair.R;
 import com.example.softwarerepair.activities.EachAppInfo;
-import com.example.softwarerepair.activities.ManageAppsActivity;
 import com.example.softwarerepair.annotations.StringsAnnotations;
 import com.example.softwarerepair.utils.ApplicationUtility;
 
@@ -90,27 +89,19 @@ public class ApplicationsAdapter extends RecyclerView.Adapter<ApplicationsAdapte
          holder.unInstallApp_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String packageName = appsList.get( position );
 
 
-                if (applicationUtility.isSystemApp( packageName )) {
+                if (applicationUtility.isSystemApp( appPackage )) {
                     Toast.makeText( context, "Can not Uninstall system's application", Toast.LENGTH_SHORT ).show();
                     return;
                 }
-
-                if (!applicationUtility.isAppLoaded( packageName )) {
+                if (!applicationUtility.isAppLoaded( appPackage )) {
                     Intent intent = new Intent( Intent.ACTION_DELETE );
-                    intent.setData( Uri.parse( "package:" + packageName ) );
+                    intent.setData( Uri.parse( "package:" + appPackage ) );
                     intent.setFlags( Intent.FLAG_ACTIVITY_NEW_TASK );
-                    try {
-                        appsList.remove(position);
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                    notifyDataSetChanged();
                     context.startActivity( intent );
-                    if (context instanceof ManageAppsActivity)
-                    ((ManageAppsActivity)context).loadApplications();
+//                    if (context instanceof ManageAppsActivity)
+//                    ((ManageAppsActivity)context).loadApplications();
                 }
             }
         });

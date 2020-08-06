@@ -7,7 +7,6 @@ import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.graphics.drawable.Drawable;
-import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -108,9 +107,16 @@ public class BackUpAppsAdapter extends RecyclerView.Adapter<BackUpAppsAdapter.Ap
                      File apk = new File(a.publicSourceDir);
                      Intent intent = new Intent();
                      intent.setAction(Intent.ACTION_SEND);
-                     intent.setType("application/vnd.android.package-archive");
-                     intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(apk.getAbsoluteFile()));
-                     context.startActivity(Intent.createChooser(intent, "Share via"));
+
+//                     Uri apkURI = apk.createNewFile()
+////                      Uri apkURI = FilePr ovider.getUriForFile(context, context.getPackageName() + ".provider", apk.getAbsoluteFile());
+//                     intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+//                     intent.setType("application/*");
+//                     intent.putExtra(Intent.EXTRA_STREAM, apkURI );
+//                     context.startActivity(Intent.createChooser(intent, "Share via"));
+
+
+
 
                  }
 

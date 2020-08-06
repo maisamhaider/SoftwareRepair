@@ -4,26 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/applicationRvLoMain_CL"
     android:layout_width="match_parent"
-    android:layout_height="200dp"
-    android:layout_marginStart="10dp"
-    android:layout_marginEnd="10dp"
-    android:background="?android:attr/selectableItemBackground">
+    android:layout_height="wrap_content"
+     android:background="?android:attr/selectableItemBackground">
 
     <LinearLayout
-        android:id="@+id/applicationRvLoMain_LL"
+        android:id="@+id/backupAppsRvLoMain_LL"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-         android:gravity="center|start"
+        android:gravity="center|start"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/allAppImage_Iv"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_marginStart="15dp" />
+            android:layout_width="45dp"
+            android:layout_height="45dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -31,6 +27,8 @@
             android:orientation="vertical">
 
             <TextView
+                android:textStyle="bold"
+                android:textSize="16sp"
                 android:id="@+id/allAppName_Tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -39,39 +37,71 @@
                 android:gravity="center"
                 android:maxWidth="150dp"
                 android:maxLines="1"
-                android:text="names" />
+                android:text="names"
+                android:textColor="@android:color/black" />
 
         </LinearLayout>
 
+
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_centerVertical="true"
-        android:layout_marginTop="12dp"
-        android:orientation="horizontal"
+
+    <Button
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="20dp"
+        android:id="@+id/detailApp_btn"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/blue_button_curved_two_bg"
+        android:text="App Detail"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline4"
+        app:layout_constraintStart_toStartOf="@+id/backupAppsRvLoMain_LL"
+        app:layout_constraintTop_toBottomOf="@+id/backupAppsRvLoMain_LL" />
+
+
+    <Button
+        android:layout_marginTop="15dp"
+        android:id="@+id/unInstallApp_btn"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="5dp"
+        android:background="@drawable/orange_button_curved_bg"
+        android:baselineAligned="false"
+        android:text="Uninstall"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toEndOf="@+id/backupAppsExtract_btn"
+        app:layout_constraintStart_toStartOf="@+id/guideline4"
+        app:layout_constraintTop_toBottomOf="@+id/backupAppsRvLoMain_LL" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorTextDul"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/applicationRvLoMain_LL">
+        app:layout_constraintTop_toBottomOf="@+id/backupAppsExtract_btn"
+        app:layout_constraintVertical_bias="0.5" />
 
-        <Button
-            android:id="@+id/detailApp_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:text="detail App" />
 
-        <Button
-            android:id="@+id/unInstallApp_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:text="unInstallApp_btn" />
+    <androidx.constraintlayout.widget.Guideline
 
-    </LinearLayout>
+        android:id="@+id/guideline4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.50121653" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
