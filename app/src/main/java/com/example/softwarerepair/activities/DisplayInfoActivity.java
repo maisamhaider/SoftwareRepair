@@ -1,20 +1,28 @@
 package com.example.softwarerepair.activities;
 
 import android.content.Context;
+import android.content.Intent;
+import android.content.pm.ResolveInfo;
 import android.content.res.Configuration;
 import android.graphics.Point;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Display;
+import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.softwarerepair.R;
 
 public class DisplayInfoActivity extends AppCompatActivity {
+    TextView tvSize,tvPhysicalSize,tvScreenWidth,tvScreenHeight,tvRefreshRate,tvName,tvXDpi,tvYDpi,tvLogicalDensity,tvScaleDensity,tvUsableWidth,tvUsableHeight;
+    Button bDisplay;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +30,21 @@ public class DisplayInfoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_display_info);
 
         int screenSize = getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK;
+
+        tvSize = findViewById(R.id.tv_size);
+        tvPhysicalSize = findViewById(R.id.tv_physical_size);
+        tvScreenWidth = findViewById(R.id.tv_screen_width);
+        tvScreenHeight = findViewById(R.id.tv_screen_height);
+        tvRefreshRate = findViewById(R.id.tv_refresh_rate);
+        tvName = findViewById(R.id.tv_name);
+        tvXDpi = findViewById(R.id.tv_xdpi);
+        tvYDpi = findViewById(R.id.tv_ydpi);
+        tvLogicalDensity = findViewById(R.id.tv_logical_density);
+        tvScaleDensity = findViewById(R.id.tv_scale_density);
+        tvUsableWidth = findViewById(R.id.tv_usable_width);
+        tvUsableHeight = findViewById(R.id.tv_usable_height);
+        bDisplay = findViewById(R.id.b_display_setting);
+
 
         String toastMsg;
         switch(screenSize) {
@@ -35,8 +58,10 @@ public class DisplayInfoActivity extends AppCompatActivity {
                 toastMsg = "Small screen";
                 break;
             default:
-                toastMsg = "Screen size is neither large, normal or small";
+                toastMsg = "Medium Screen size";
         }
+
+        tvSize.setText(toastMsg);
 
         WindowManager wm = (WindowManager)this.getSystemService(Context.WINDOW_SERVICE);
         Display display = wm.getDefaultDisplay();
@@ -44,16 +69,27 @@ public class DisplayInfoActivity extends AppCompatActivity {
         display.getMetrics(metrics);
 //        display.getP
         String displayName = display.getName();
+        tvName.setText(displayName);
         String displayHeight = display.getHeight() +"px";
+        tvScreenHeight.setText(displayHeight);
         String displayWidth = display.getWidth() +"px";
+        tvScreenWidth.setText(displayWidth);
         int id = display.getDisplayId();
+
         float refreshRate = display.getRefreshRate();
+        tvRefreshRate.setText(String.valueOf(refreshRate));
         float scaleDensity =  metrics.scaledDensity;
+        tvScaleDensity.setText(String.valueOf(scaleDensity));
         float logicalDensity =  metrics.density;
+        tvLogicalDensity.setText(String.valueOf(logicalDensity));
         String  xdpi = metrics.xdpi +"dpi";
+        tvXDpi.setText(xdpi);
         String  ydpi = metrics.ydpi +"dpi";
+        tvYDpi.setText(ydpi);
         String width = metrics.widthPixels +"px";
+        tvUsableWidth.setText(width);
         String height = metrics.heightPixels +"px";
+        tvUsableHeight.setText(height);
 
 
 
@@ -93,5 +129,17 @@ public class DisplayInfoActivity extends AppCompatActivity {
         double y = Math.pow(mHeightPixels/metrics.ydpi,2);
         double screenInches = Math.sqrt(x+y);
         Log.d("debug","Screen inches : " + screenInches);
+
+        bDisplay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Settings.ACTION_DISPLAY_SETTINGS);
+                ResolveInfo resolveInfo = getPackageManager().resolveActivity(intent, 0);
+                if (resolveInfo != null) {
+                    startActivity(intent);
+                }
+            }
+        });
+
     }
 }
