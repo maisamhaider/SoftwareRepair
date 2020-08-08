@@ -8,7 +8,7 @@
     tools:context=".activities.InfoStorageAndRamActivity">
     <TextView
         android:layout_margin="20dp"
-        android:textColor="@color/colorTextHeader"
+        android:textColor="@color/colorTextOne"
         android:textStyle="bold"
         android:textSize="18sp"
         android:text="Repair System for Android"
@@ -20,8 +20,17 @@
         android:layout_marginBottom="5dp"
         android:textSize="16sp"
         android:textStyle="bold"
-        android:textColor="@color/colorListText"
+        android:textColor="@color/colorTextTwo"
         android:text="Storage Information"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:layout_marginTop="2dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="5dp"
+         android:textStyle="bold"
+        android:textColor="@color/colorTextThree"
+        android:text="Internal Storage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
@@ -32,7 +41,7 @@
         android:layout_marginBottom="5dp"
         android:textSize="16sp"
         android:textStyle="bold"
-        android:textColor="@color/colorListText"
+        android:textColor="@color/colorTextTwo"
         android:text="RAM Information"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>

@@ -18,7 +18,6 @@ import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
-import com.akexorcist.roundcornerprogressbar.RoundCornerProgressBar;
 import com.example.softwarerepair.R;
 import com.example.softwarerepair.activities.BatteryInfoActivity;
 import com.example.softwarerepair.activities.BoosterRamActivity;
@@ -29,11 +28,13 @@ import com.example.softwarerepair.utils.MathCalculationsUtil;
 import com.example.softwarerepair.utils.StorageUtility;
 import com.mikhaellopez.circularprogressbar.CircularProgressBar;
 
+import antonkozyriatskyi.circularprogressindicator.CircularProgressIndicator;
+
 public class HomeFragment extends Fragment {
     private View view;
      StorageUtility storageUtility;
     MathCalculationsUtil mathCalculationsUtil;
-    RoundCornerProgressBar batteryRoundCorner_pb, storageRoundCorner_pb;
+    CircularProgressIndicator batteryRoundCorner_pb, storageRoundCorner_pb;
     TextView batteryProgressBarPercent_tv;
 
     public static HomeFragment newInstance() {
@@ -63,7 +64,6 @@ public class HomeFragment extends Fragment {
         storageRoundCorner_pb = view.findViewById(R.id.storageRoundCorner_pb);
         batteryProgressBarPercent_tv = view.findViewById(R.id.batteryProgressBarPercent_tv);
 
-        batteryRoundCorner_pb.setMax((float) 100.0);
 
         view.findViewById(R.id.homeBatteryIntent_view).setOnClickListener(v -> {
             Intent intent = new Intent(getContext(), BatteryInfoActivity.class);
@@ -160,12 +160,11 @@ public class HomeFragment extends Fragment {
         homeStorageFreeSize_tv.setText(storageAvailablePrefix);
 
 
-        storageRoundCorner_pb.setMax(totalBytes);
-        ValueAnimator animator = ValueAnimator.ofFloat(0, usedBytes);
+         ValueAnimator animator = ValueAnimator.ofFloat(0, usedBytes);
         animator.setDuration(1500);
-        animator.addUpdateListener(animation -> storageRoundCorner_pb.setProgress(Float.parseFloat(animation.getAnimatedValue().toString())));
+        animator.addUpdateListener(animation -> storageRoundCorner_pb.setProgress(Float.parseFloat(animation.getAnimatedValue().toString()),totalBytes));
         animator.start();
-        storageRoundCorner_pb.setProgress(usedBytes);
+        storageRoundCorner_pb.setProgress(usedBytes,totalBytes);
         getActivity().registerReceiver(this.batteryInfoReceiver, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
 
 
@@ -177,7 +176,7 @@ public class HomeFragment extends Fragment {
         public void onReceive(Context ctxt, Intent intent) {
             int bLevel = intent.getIntExtra(BatteryManager.EXTRA_LEVEL, 0);
             batteryProgressBarPercent_tv.setText( mathCalculationsUtil.getPercentageFloat((float) 100,(float)bLevel)+"%");
-            batteryRoundCorner_pb.setProgress((float) bLevel);
+            batteryRoundCorner_pb.setProgress(bLevel,100);
         }
     };
 }
