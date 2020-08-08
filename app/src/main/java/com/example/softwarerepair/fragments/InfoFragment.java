@@ -9,10 +9,12 @@ import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 
 import com.example.softwarerepair.R;
+import com.example.softwarerepair.activities.BatteryInfoActivity;
 import com.example.softwarerepair.activities.BluetoothInfoActivity;
 import com.example.softwarerepair.activities.DisplayInfoActivity;
 import com.example.softwarerepair.activities.FeaturesActivity;
 import com.example.softwarerepair.activities.HardwareInfoActivity;
+import com.example.softwarerepair.activities.InfoStorageAndRamActivity;
 import com.example.softwarerepair.activities.ProcessorInfoActivity;
 import com.example.softwarerepair.activities.SensorInfoActivity;
 
@@ -64,12 +66,12 @@ public class InfoFragment extends Fragment {
        });
 
        view.findViewById(R.id.infoBattery_cl).setOnClickListener(v -> {
-//           Intent intent = new Intent(getContext(), DisplayInfoActivity.class) ;
-//           getActivity().startActivity(intent);
+           Intent intent = new Intent(getContext(), BatteryInfoActivity.class) ;
+           getActivity().startActivity(intent);
        });
        view.findViewById(R.id.infoStorageAndRam_cl).setOnClickListener(v -> {
-//           Intent intent = new Intent(getContext(), DisplayInfoActivity.class) ;
-//           getActivity().startActivity(intent);
+           Intent intent = new Intent(getContext(), InfoStorageAndRamActivity.class) ;
+           getActivity().startActivity(intent);
        });
        view.findViewById(R.id.infoCamera_cl).setOnClickListener(v -> {
 //           Intent intent = new Intent(getContext(), DisplayInfoActivity.class) ;

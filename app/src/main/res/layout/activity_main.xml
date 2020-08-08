@@ -19,6 +19,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:tabIndicator="@android:color/transparent"
-        app:tabSelectedTextColor="@color/bottom_nav_selector" />
+        app:tabTextColor="@color/colorBottomMenuText"
+    app:tabSelectedTextColor="@color/colorTextHeader" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

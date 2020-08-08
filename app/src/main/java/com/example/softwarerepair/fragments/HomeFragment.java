@@ -27,6 +27,7 @@ import com.example.softwarerepair.activities.EmptyFoldersActivity;
 import com.example.softwarerepair.activities.ManageAppsActivity;
 import com.example.softwarerepair.utils.MathCalculationsUtil;
 import com.example.softwarerepair.utils.StorageUtility;
+import com.mikhaellopez.circularprogressbar.CircularProgressBar;
 
 public class HomeFragment extends Fragment {
     private View view;
@@ -118,13 +119,25 @@ public class HomeFragment extends Fragment {
         float totalMemory = mi.totalMem;
         float freeMemory = mi.availMem;
         float usedMemory = totalMemory - freeMemory;
+        @SuppressLint("DefaultLocale") String ramUsagePercentage = String.format("%.1f", mathCalculationsUtil.getPercentageFloat(totalMemory, usedMemory)) + "%";
+
         TextView systemAndAppsSize_tv = view.findViewById(R.id.systemAndAppsSize_tv);
         TextView availableRamSize_tv = view.findViewById(R.id.availableRamSize_tv);
         TextView totalRamSize_tv = view.findViewById(R.id.totalRamSize_tv);
+        TextView homeRamPercentage_tv = view.findViewById(R.id.homeRamPercentage_tv);
+        CircularProgressBar homeRam_cpb = view.findViewById(R.id.homeRam_cpb);
 
         systemAndAppsSize_tv.setText(mathCalculationsUtil.getCalculatedDataSizeWithPrefix(usedMemory));
         availableRamSize_tv.setText(mathCalculationsUtil.getCalculatedDataSizeWithPrefix(freeMemory));
         totalRamSize_tv.setText(mathCalculationsUtil.getCalculatedDataSizeWithPrefix(totalMemory));
+        homeRamPercentage_tv.setText(ramUsagePercentage);
+
+        homeRam_cpb.setProgressMax(totalMemory);
+        ValueAnimator animator1 = ValueAnimator.ofFloat(0, usedMemory);
+        animator1.setDuration(1500);
+        animator1.addUpdateListener(animation -> homeRam_cpb.setProgress(Float.parseFloat(animation.getAnimatedValue().toString())));
+        animator1.start();
+        homeRam_cpb.setProgress(usedMemory);
 
         //for Storage
         float totalBytes, availableBytes, usedBytes;

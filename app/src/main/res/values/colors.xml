@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3E549E</color>
-    <color name="colorPrimaryDark">#243C7F</color>
-    <color name="colorAccent">#95A1CB</color>
+    <color name="colorPrimary">#474747</color>
+    <color name="colorPrimaryDark">#243c7F</color>
+    <color name="colorAccent">#979797</color>
 
 
-    <color name="colorTextHeader">#243C7F</color>
-    <color name="colorTextDul">#95A1CB</color>
-    <color name="colorButtonText">#3E549E</color>
-    <color name="colorListText">#4D4D4D</color>
-    <color name="colorProgressBg">#7081B8</color>
-    <color name="colorBottomMenuText">#C2C9E2</color>
-    <color name="colorBatteryBg">#C0C7E0</color>
-    <color name="colorBatteryInfoItem">#475DA7</color>
-    <color name="colorCirclePbBgNarrow">#6B7CB7</color>
-    <color name="colorCirclePbBgFilledBig">#455AA2</color>
-    <color name="colorOrange">#FF7F0E</color>
-    <color name="colorRed">#FF5353</color>
+    <color name="colorTextOne">#243c7F</color>
+    <color name="colorTextTwo">#474747</color>
+    <color name="colorTextThree">#979797</color>
+    <color name="colorGreen">#00D473</color>
+    <color name="colorBlueLight">#006FFF</color>
+    <color name="colorBlueDark">#474DA7</color>
+    <color name="colorRed">#F95053</color>
+    <color name="colorProgressGg">#F5F6F9</color>
+
 
 
 </resources>

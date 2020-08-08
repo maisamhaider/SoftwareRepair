@@ -47,10 +47,7 @@ public class BoosterRamActivity extends AppCompatActivity {
             protected void onProgressUpdate(Integer... values) {
                 super.onProgressUpdate(values);
 
-
             }
-
-
             @Override
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
