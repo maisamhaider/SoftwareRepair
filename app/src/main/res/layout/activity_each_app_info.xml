@@ -20,15 +20,15 @@
 
 
         <LinearLayout
-            android:id="@+id/linearLayout11"
+            android:id="@+id/open_setting_ll"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="@+id/linearLayout9"
+            app:layout_constraintBottom_toBottomOf="@+id/check_store_ll"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/linearLayout9"
-            app:layout_constraintTop_toTopOf="@+id/linearLayout9">
+            app:layout_constraintStart_toEndOf="@+id/check_store_ll"
+            app:layout_constraintTop_toTopOf="@+id/check_store_ll">
 
             <ImageView
                 android:id="@+id/imageView30"
@@ -46,15 +46,15 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/linearLayout9"
+            android:id="@+id/check_store_ll"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="@+id/linearLayout10"
-            app:layout_constraintEnd_toStartOf="@+id/linearLayout11"
+            app:layout_constraintBottom_toBottomOf="@+id/open_app_ll"
+            app:layout_constraintEnd_toStartOf="@+id/open_setting_ll"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/linearLayout10"
-            app:layout_constraintTop_toTopOf="@+id/linearLayout10">
+            app:layout_constraintStart_toEndOf="@+id/open_app_ll"
+            app:layout_constraintTop_toTopOf="@+id/open_app_ll">
 
             <ImageView
                 android:id="@+id/imageView31"
@@ -72,11 +72,11 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/linearLayout10"
+            android:id="@+id/open_app_ll"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintEnd_toStartOf="@+id/linearLayout9"
+            app:layout_constraintEnd_toStartOf="@+id/check_store_ll"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/view5">
@@ -171,10 +171,11 @@
             android:layout_width="0dp"
             android:layout_height="1dp"
             android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/textView47"
-            tools:layout_editor_absoluteY="442dp" />
+            app:layout_constraintTop_toBottomOf="@+id/open_app_ll" />
 
         <View
             android:id="@+id/view10"
@@ -252,7 +253,7 @@
             app:layout_constraintTop_toBottomOf="@+id/view12" />
 
         <TextView
-            android:id="@+id/textView55"
+            android:id="@+id/version_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -265,7 +266,7 @@
             app:layout_constraintStart_toEndOf="@+id/textView51" />
 
         <TextView
-            android:id="@+id/textView56"
+            android:id="@+id/tv_size"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -278,7 +279,7 @@
             app:layout_constraintStart_toEndOf="@+id/textView52" />
 
         <TextView
-            android:id="@+id/textView57"
+            android:id="@+id/install_time_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -291,7 +292,7 @@
             app:layout_constraintStart_toEndOf="@+id/textView53" />
 
         <TextView
-            android:id="@+id/textView58"
+            android:id="@+id/update_time_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
