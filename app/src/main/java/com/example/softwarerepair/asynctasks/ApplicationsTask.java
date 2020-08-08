@@ -24,14 +24,16 @@ public class ApplicationsTask extends AsyncTask<Void, Integer, String> {
     private LinearLayoutManager linearLayoutManager;
     private List<String> appList;
     private ApplicationUtility applicationUtility;
+    private boolean isSystemApp =false;
 
     public ApplicationsTask(Context context, ApplicationsAdapter applicationsAdapter,
-                            RecyclerView recyclerView) {
+                            RecyclerView recyclerView,boolean isSystemApp) {
         this.context = context;
         this.applicationsAdapter = applicationsAdapter;
         this.recyclerView = recyclerView;
         this.appList = new ArrayList<>();
         applicationUtility = new ApplicationUtility(context);
+        this.isSystemApp = isSystemApp;
      }
 
     @Override
@@ -42,7 +44,16 @@ public class ApplicationsTask extends AsyncTask<Void, Integer, String> {
 
     @Override
     protected String doInBackground(Void... voids) {
-        appList = applicationUtility.getSysOrInstalledAppsList(true,true);
+        if (isSystemApp)
+        {
+            appList = applicationUtility.getSysOrInstalledAppsList(true,false);
+
+        }
+        else
+        {
+            appList = applicationUtility.getSysOrInstalledAppsList(false,false);
+
+        }
         return null;
     }
 
@@ -50,7 +61,7 @@ public class ApplicationsTask extends AsyncTask<Void, Integer, String> {
     protected void onPostExecute(String s) {
         linearLayoutManager.setOrientation(RecyclerView.VERTICAL);
         recyclerView.setLayoutManager(linearLayoutManager);
-        applicationsAdapter.setList(appList);
+        applicationsAdapter.setList(appList,isSystemApp);
         recyclerView.setAdapter(applicationsAdapter);
         applicationsAdapter.notifyDataSetChanged();
     }

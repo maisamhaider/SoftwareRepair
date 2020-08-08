@@ -19,15 +19,69 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/application_RV"
+    <TextView
+        android:textStyle="bold"
+        android:id="@+id/installedApps_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="installed"
+        app:layout_constraintStart_toStartOf="@+id/guideline5"
+        app:layout_constraintTop_toBottomOf="@+id/textView32" />
+
+    <View
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="5dp"
+        android:id="@+id/view4"
+        android:layout_width="0dp"
+        android:layout_height="3dp"
+        android:background="@drawable/small_curved_bg"
+        app:layout_constraintEnd_toEndOf="@+id/installedApps_tv"
+        app:layout_constraintStart_toStartOf="@+id/installedApps_tv"
+        app:layout_constraintTop_toBottomOf="@+id/installedApps_tv" />
+
+    <TextView
+        android:id="@+id/systemApp_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+         android:text="System"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guideline7"
+        app:layout_constraintTop_toTopOf="@+id/installedApps_tv" />
+
+    <View
+        android:visibility="invisible"
+        android:id="@+id/view5"
+        android:layout_marginEnd="10dp"
+        android:layout_width="0dp"
+        android:layout_height="3dp"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/small_curved_bg"
+        app:layout_constraintEnd_toEndOf="@+id/systemApp_tv"
+        app:layout_constraintStart_toStartOf="@+id/systemApp_tv"
+        app:layout_constraintTop_toBottomOf="@+id/installedApps_tv" />
+
+    <FrameLayout
+        android:id="@+id/manageAppFragmentContainer"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView32"
+        app:layout_constraintTop_toBottomOf="@+id/view4"
         tools:layout_editor_absoluteX="16dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.18" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline7"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.82" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
