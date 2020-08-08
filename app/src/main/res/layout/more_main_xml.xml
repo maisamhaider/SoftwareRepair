@@ -52,7 +52,7 @@
                     android:layout_width="0dp"
                     android:layout_height="100dp"
                     android:layout_marginEnd="16dp"
-                    android:background="@drawable/button_bg"
+                    android:background="@drawable/blue_stroke_button_bg"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/guideline2"
                     app:layout_constraintHorizontal_bias="0.5"
@@ -65,7 +65,7 @@
                         android:layout_height="25dp"
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="16dp"
-                        android:src="@drawable/ic_battery"
+                        android:src="@drawable/ic_battery_usage"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:srcCompat="@drawable/ic_battery_usage" />
@@ -91,7 +91,7 @@
                     android:layout_width="0dp"
                     android:layout_height="100dp"
                     android:layout_marginStart="16dp"
-                    android:background="@drawable/button_bg"
+                    android:background="@drawable/blue_stroke_button_bg"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
@@ -137,7 +137,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/button_bg">
+                android:background="@drawable/blue_stroke_button_bg">
 
                 <ImageView
                     android:id="@+id/imageView15"
@@ -178,7 +178,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_marginTop="16dp"
-                android:background="@drawable/button_bg">
+                android:background="@drawable/blue_stroke_button_bg">
 
                 <ImageView
                     android:id="@+id/imageView16"
@@ -225,7 +225,7 @@
                     android:layout_width="0dp"
                     android:layout_height="100dp"
                     android:layout_marginEnd="16dp"
-                    android:background="@drawable/button_bg"
+                    android:background="@drawable/blue_stroke_button_bg"
                     app:layout_constraintEnd_toStartOf="@+id/guideline6"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
@@ -261,7 +261,7 @@
                     android:layout_width="0dp"
                     android:layout_height="100dp"
                     android:layout_marginStart="16dp"
-                    android:background="@drawable/button_bg"
+                    android:background="@drawable/blue_stroke_button_bg"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/guideline6"
                     app:layout_constraintTop_toTopOf="parent">
@@ -298,7 +298,7 @@
                     android:layout_height="100dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="16dp"
-                    android:background="@drawable/button_bg"
+                    android:background="@drawable/blue_stroke_button_bg"
                     app:layout_constraintEnd_toStartOf="@+id/guideline6"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
@@ -336,7 +336,7 @@
                     android:layout_height="100dp"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
-                    android:background="@drawable/button_bg"
+                    android:background="@drawable/blue_stroke_button_bg"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/guideline6"
                     app:layout_constraintTop_toBottomOf="@+id/moreBluetoothSettings_cl">
@@ -373,7 +373,7 @@
                     android:layout_height="100dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="16dp"
-                    android:background="@drawable/button_bg"
+                    android:background="@drawable/blue_stroke_button_bg"
                     app:layout_constraintEnd_toStartOf="@+id/guideline6"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/moreManageNetworkUsage">
@@ -410,7 +410,7 @@
                     android:layout_height="100dp"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
-                    android:background="@drawable/button_bg"
+                    android:background="@drawable/blue_stroke_button_bg"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/guideline6"
                     app:layout_constraintTop_toBottomOf="@+id/moreNetworkOperators_cl">
@@ -447,7 +447,7 @@
                     android:layout_height="100dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="16dp"
-                    android:background="@drawable/button_bg"
+                    android:background="@drawable/blue_stroke_button_bg"
                     app:layout_constraintEnd_toStartOf="@+id/guideline6"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/moreWirelessSettings_cl">
@@ -482,7 +482,7 @@
                     android:layout_height="100dp"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
-                    android:background="@drawable/button_bg"
+                    android:background="@drawable/blue_stroke_button_bg"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="@+id/guideline6"
@@ -519,7 +519,7 @@
                     android:layout_width="0dp"
                     android:layout_height="100dp"
                     android:layout_marginTop="8dp"
-                    android:background="@drawable/button_bg"
+                    android:background="@drawable/blue_stroke_button_bg"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
