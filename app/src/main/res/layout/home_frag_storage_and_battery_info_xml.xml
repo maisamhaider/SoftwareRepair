@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@android:color/white"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
 
 
     <LinearLayout
@@ -57,10 +57,9 @@
         app:progressBackgroundColor="@color/colorProgressGg"
         app:progressBackgroundStrokeWidth="4dp"
         app:progressCap="round"
-        app:textColor="@android:color/white"
         app:progressColor="@color/colorRed"
         app:startAngle="270"
-        />
+        app:textColor="@android:color/white" />
 
     <com.mikhaellopez.circularprogressbar.CircularProgressBar
         android:id="@+id/storageRoundCorner_pb"
@@ -75,15 +74,15 @@
         app:drawDot="true"
         app:enableProgressAnimation="true"
         app:fillBackground="false"
-          app:progressBackgroundColor="@color/colorProgressGg"
-        app:progressBackgroundStrokeWidth="4dp"
-        app:progressCap="round"
-        app:textColor="@android:color/white"
-        app:progressColor="@color/colorRed"
-        app:startAngle="270"
         app:layout_constraintBottom_toBottomOf="@+id/batteryRoundCorner_pb"
         app:layout_constraintStart_toEndOf="@+id/batteryRoundCorner_pb"
-        app:layout_constraintTop_toTopOf="@+id/batteryRoundCorner_pb" />
+        app:layout_constraintTop_toTopOf="@+id/batteryRoundCorner_pb"
+        app:progressBackgroundColor="@color/colorProgressGg"
+        app:progressBackgroundStrokeWidth="4dp"
+        app:progressCap="round"
+        app:progressColor="@color/colorRed"
+        app:startAngle="270"
+        app:textColor="@android:color/white" />
 
 
     <View
