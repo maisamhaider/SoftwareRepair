@@ -33,7 +33,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:text="Battery Type"
-                android:textColor="@color/colorListText"
+                android:textColor="@color/colorTextTwo"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@+id/imageView1"
@@ -41,7 +41,7 @@
                 app:layout_constraintTop_toTopOf="@+id/imageView1" />
 
             <TextView
-                android:textColor="@color/colorBatteryInfoItem"
+                android:textColor="@color/colorTextOne"
                 android:id="@+id/batteryType_tv"
                 android:layout_marginEnd="25dp"
                 android:layout_width="wrap_content"
@@ -54,7 +54,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_marginTop="10dp"
-                android:background="@color/colorTextDul"
+                android:background="@color/colorAccent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView1" />
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -83,7 +83,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:text="Power Source"
-                android:textColor="@color/colorListText"
+                android:textColor="@color/colorTextTwo"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@+id/imageView2"
@@ -91,7 +91,7 @@
                 app:layout_constraintTop_toTopOf="@+id/imageView2" />
 
             <TextView
-                android:textColor="@color/colorBatteryInfoItem"
+                android:textColor="@color/colorTextOne"
                 android:id="@+id/powerSource_tv"
                 android:layout_marginEnd="25dp"
                 android:layout_width="wrap_content"
@@ -104,7 +104,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_marginTop="10dp"
-                android:background="@color/colorTextDul"
+                android:background="@color/colorAccent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView2" />
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -132,7 +132,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:text="Temperature"
-                android:textColor="@color/colorListText"
+                android:textColor="@color/colorTextTwo"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@+id/imageView3"
@@ -140,7 +140,7 @@
                 app:layout_constraintTop_toTopOf="@+id/imageView3" />
 
             <TextView
-                android:textColor="@color/colorBatteryInfoItem"
+                android:textColor="@color/colorTextOne"
                 android:id="@+id/temperature_tv"
                 android:layout_marginEnd="25dp"
                 android:layout_width="wrap_content"
@@ -153,7 +153,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_marginTop="10dp"
-                android:background="@color/colorTextDul"
+                android:background="@color/colorAccent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView3" />
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -180,7 +180,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:text="Battery Voltage"
-                android:textColor="@color/colorListText"
+                android:textColor="@color/colorTextTwo"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@+id/imageView4"
@@ -188,7 +188,7 @@
                 app:layout_constraintTop_toTopOf="@+id/imageView4" />
 
             <TextView
-                android:textColor="@color/colorBatteryInfoItem"
+                android:textColor="@color/colorTextOne"
                 android:id="@+id/bVoltage_tv"
                 android:layout_marginEnd="25dp"
                 android:layout_width="wrap_content"
@@ -201,7 +201,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_marginTop="10dp"
-                android:background="@color/colorTextDul"
+                android:background="@color/colorAccent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView4" />
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -228,7 +228,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:text="Battery Status"
-                android:textColor="@color/colorListText"
+                android:textColor="@color/colorTextTwo"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@+id/imageView5"
@@ -236,7 +236,7 @@
                 app:layout_constraintTop_toTopOf="@+id/imageView5" />
 
             <TextView
-                android:textColor="@color/colorBatteryInfoItem"
+                android:textColor="@color/colorTextOne"
                 android:id="@+id/bStatus_tv"
                 android:layout_marginEnd="25dp"
                 android:layout_width="wrap_content"
@@ -249,7 +249,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_marginTop="10dp"
-                android:background="@color/colorTextDul"
+                android:background="@color/colorAccent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView5" />
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -276,7 +276,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:text="Battery Health"
-                android:textColor="@color/colorListText"
+                android:textColor="@color/colorTextTwo"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@+id/imageView6"
@@ -284,7 +284,7 @@
                 app:layout_constraintTop_toTopOf="@+id/imageView6" />
 
             <TextView
-                android:textColor="@color/colorBatteryInfoItem"
+                android:textColor="@color/colorTextOne"
                 android:id="@+id/bHealth_tv"
                 android:layout_marginEnd="25dp"
                 android:layout_width="wrap_content"
@@ -297,7 +297,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_marginTop="10dp"
-                android:background="@color/colorTextDul"
+                android:background="@color/colorAccent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView6" />
         </androidx.constraintlayout.widget.ConstraintLayout>

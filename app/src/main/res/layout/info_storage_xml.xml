@@ -1,84 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/corved_color_one_bg"
-    android:layout_margin="16dp"
-    android:layout_height="wrap_content">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp">
 
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="18dp"
-        android:text="Internal Storage"
-        android:textColor="@color/colorTextHeader"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:textColor="@color/colorButtonText"
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
         android:text="Used :"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        android:textColor="@color/colorTextThree"
+        app:layout_constraintTop_toBottomOf="@+id/infoStorageUsedSize_tv"
+        tools:layout_editor_absoluteX="47dp" />
 
     <TextView
         android:id="@+id/infoStorageUsedSize_tv"
-        android:textColor="@color/colorButtonText"
-        android:layout_marginStart="5dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/textView3"
-        app:layout_constraintStart_toEndOf="@+id/textView3"
-        app:layout_constraintTop_toTopOf="@+id/textView3" />
+        android:layout_width="39dp"
+        android:layout_height="17dp"
+        android:text="12 GB"
+        android:textColor="@color/colorTextTwo"
+        app:layout_constraintEnd_toEndOf="@+id/textView3"
+        app:layout_constraintStart_toStartOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/infoStorage_cpb" />
 
     <TextView
-        android:textColor="@color/colorButtonText"
-        android:layout_marginTop="10dp"
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="168dp"
         android:text="Free :"
+        android:textColor="@color/colorTextThree"
         app:layout_constraintStart_toStartOf="@+id/textView3"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        tools:layout_editor_absoluteY="198dp" />
 
     <TextView
         android:id="@+id/infoStorageFreeSize_tv"
-        android:textColor="@color/colorButtonText"
-        android:layout_marginStart="5dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/textView2"
-        app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:layout_constraintTop_toTopOf="@+id/textView2" />
+        android:text="12 GB"
+        android:textColor="@color/colorTextTwo"
+        app:layout_constraintEnd_toEndOf="@+id/textView2"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        tools:layout_editor_absoluteY="156dp" />
 
     <TextView
-        android:layout_marginBottom="25dp"
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:layout_marginBottom="25dp"
         android:text="Total :"
-        android:textColor="@color/colorButtonText"
+        android:textColor="@color/colorTextThree"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/textView2"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <TextView
-        android:textColor="@color/colorButtonText"
+        android:text="12 GB"
         android:id="@+id/infoStorageTotalSize_tv"
-        android:layout_marginStart="5dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:textColor="@color/colorTextTwo"
         app:layout_constraintBottom_toBottomOf="@+id/textView5"
         app:layout_constraintStart_toEndOf="@+id/textView5"
         app:layout_constraintTop_toTopOf="@+id/textView5" />
@@ -87,22 +74,21 @@
         android:id="@+id/infoStorage_cpb"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        app:cpb_background_progressbar_color="@color/colorBatteryBg"
+        app:cpb_background_progressbar_color="@color/colorProgressGg"
         app:cpb_background_progressbar_width="3dp"
-        app:cpb_progressbar_width="3dp"
         app:cpb_progress_direction="to_right"
         app:cpb_progressbar_color="@color/colorPrimaryDark"
+        app:cpb_progressbar_width="3dp"
         app:cpb_round_border="false"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="@+id/infoStorage_cpb"
         app:layout_constraintEnd_toEndOf="@+id/infoStorage_cpb"
@@ -110,7 +96,7 @@
         app:layout_constraintTop_toTopOf="@+id/infoStorage_cpb">
 
         <ImageView
-             android:id="@+id/imageView26"
+            android:id="@+id/imageView26"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:src="@drawable/ic_storage_info" />
@@ -120,19 +106,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="40%"
-            android:textColor="@color/colorTextHeader"
+            android:textColor="@color/colorTextTwo"
             android:textSize="16sp"
-            android:textStyle="bold"
-          />
+            android:textStyle="bold" />
 
         <TextView
-            android:textColor="@color/colorTextHeader"
-            android:textSize="12sp"
-            android:text="Storage"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:text="Storage"
+            android:textColor="@color/colorTextThree"
+            android:textSize="12sp" />
     </LinearLayout>
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -41,8 +41,8 @@
 
     <antonkozyriatskyi.circularprogressindicator.CircularProgressIndicator
         android:id="@+id/batteryRoundCorner_pb"
-        android:layout_width="110dp"
-        android:layout_height="110dp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
         android:layout_gravity="center"
         android:layout_marginStart="16dp"
         android:layout_marginTop="10dp"
@@ -55,17 +55,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:progressBackgroundColor="@color/colorProgressGg"
-        app:progressBackgroundStrokeWidth="4dp"
+        app:progressBackgroundStrokeWidth="3dp"
+        app:progressStrokeWidth="3dp"
         app:progressCap="round"
         app:textColor="@android:color/white"
         app:progressColor="@color/colorRed"
         app:startAngle="270"
         />
 
-    <com.mikhaellopez.circularprogressbar.CircularProgressBar
+    <antonkozyriatskyi.circularprogressindicator.CircularProgressIndicator
         android:id="@+id/storageRoundCorner_pb"
-        android:layout_width="110dp"
-        android:layout_height="110dp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
         android:layout_gravity="center"
         android:layout_marginStart="16dp"
         android:layout_marginTop="10dp"
@@ -76,7 +77,8 @@
         app:enableProgressAnimation="true"
         app:fillBackground="false"
           app:progressBackgroundColor="@color/colorProgressGg"
-        app:progressBackgroundStrokeWidth="4dp"
+        app:progressBackgroundStrokeWidth="3dp"
+        app:progressStrokeWidth="3dp"
         app:progressCap="round"
         app:textColor="@android:color/white"
         app:progressColor="@color/colorRed"
@@ -91,7 +93,7 @@
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_marginTop="16dp"
-        android:background="@drawable/button_bg"
+        android:background="@drawable/blue_stroke_button_bg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -163,7 +165,7 @@
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_marginTop="20dp"
-        android:background="@drawable/button_bg"
+        android:background="@drawable/blue_stroke_button_bg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -238,6 +240,18 @@
             android:textSize="10sp"
             android:textStyle="bold" />
     </LinearLayout>
+
+    <View
+        android:layout_marginTop="20dp"
+        android:id="@+id/view7"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/colorAccent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/homeStorageIntent_view" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
