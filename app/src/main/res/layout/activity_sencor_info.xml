@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:text="Sensors"
-        android:textColor="@color/colorTextHeader"
+        android:textColor="@color/colorTextOne"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"

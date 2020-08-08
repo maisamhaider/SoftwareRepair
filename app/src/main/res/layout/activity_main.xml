@@ -20,6 +20,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:tabIndicator="@android:color/transparent"
         app:tabTextColor="@color/colorBottomMenuText"
-    app:tabSelectedTextColor="@color/colorTextHeader" />
+    app:tabSelectedTextColor="@color/colorPrimaryDark" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

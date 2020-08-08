@@ -58,7 +58,7 @@
         app:progressBackgroundStrokeWidth="3dp"
         app:progressStrokeWidth="3dp"
         app:progressCap="round"
-        app:textColor="@android:color/white"
+        app:textColor="@android:color/transparent"
         app:progressColor="@color/colorRed"
         app:startAngle="270"
         />
@@ -80,7 +80,7 @@
         app:progressBackgroundStrokeWidth="3dp"
         app:progressStrokeWidth="3dp"
         app:progressCap="round"
-        app:textColor="@android:color/white"
+        app:textColor="@android:color/transparent"
         app:progressColor="@color/colorRed"
         app:startAngle="270"
         app:layout_constraintBottom_toBottomOf="@+id/batteryRoundCorner_pb"
