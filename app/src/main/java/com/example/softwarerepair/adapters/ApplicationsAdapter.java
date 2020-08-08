@@ -71,9 +71,7 @@ public class ApplicationsAdapter extends RecyclerView.Adapter<ApplicationsAdapte
 
         Glide.with(context).load((Drawable) applicationUtility.getAppInformation(appPackage, StringsAnnotations.APP_ICON)).placeholder(R.mipmap.ic_launcher).into(holder.allAppImage_Iv);
 
-
         if (Monitor.hasUsagePermission())
-
 
         holder.applicationRvLoMain_CL.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,7 +84,7 @@ public class ApplicationsAdapter extends RecyclerView.Adapter<ApplicationsAdapte
             }
         });
 
-         holder.unInstallApp_btn.setOnClickListener(new View.OnClickListener() {
+         holder.unInstallApp_cl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -106,7 +104,7 @@ public class ApplicationsAdapter extends RecyclerView.Adapter<ApplicationsAdapte
             }
         });
 
-         holder.detailApp_btn.setOnClickListener(new View.OnClickListener() {
+         holder.detailApp_cl.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View v) {
                  Intent intent = new Intent(context, EachAppInfo.class);
@@ -127,15 +125,15 @@ public class ApplicationsAdapter extends RecyclerView.Adapter<ApplicationsAdapte
    public class ApplicationsHolder extends RecyclerView.ViewHolder {
 
 
-       Button unInstallApp_btn,detailApp_btn;
+       ConstraintLayout unInstallApp_cl, detailApp_cl;
        TextView allAppName_Tv;
        ImageView allAppImage_Iv;
        ConstraintLayout applicationRvLoMain_CL;
         public ApplicationsHolder(@NonNull View itemView) {
             super( itemView );
 
-            unInstallApp_btn = itemView.findViewById(R.id.unInstallApp_btn);
-            detailApp_btn = itemView.findViewById(R.id.detailApp_btn);
+            unInstallApp_cl = itemView.findViewById(R.id.unInstallApp_cl);
+            detailApp_cl = itemView.findViewById(R.id.detailApp_cl);
             allAppName_Tv = itemView.findViewById(R.id.allAppName_Tv);
             allAppImage_Iv = itemView.findViewById(R.id.allAppImage_Iv);
             applicationRvLoMain_CL = itemView.findViewById(R.id.applicationRvLoMain_CL);
