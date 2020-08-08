@@ -13,7 +13,8 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:text="Repair System for Android"
-         android:textSize="18sp"
+        android:textColor="@color/colorTextOne"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -48,7 +49,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:background="?android:attr/selectableItemBackground">
+                android:background="@drawable/blue_stroke_button_bg">
 
                 <ImageView
                     android:id="@+id/imageView7"
@@ -56,17 +57,18 @@
                     android:layout_height="25dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="15dp"
-                     app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:textStyle="bold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
                     android:text="Battery"
-                     app:layout_constraintBottom_toBottomOf="@+id/imageView7"
+                    android:textColor="@color/colorTextTwo"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView7"
                     app:layout_constraintStart_toEndOf="@+id/imageView7"
                     app:layout_constraintTop_toTopOf="@+id/imageView7"
                     app:layout_constraintVertical_bias="0.512" />
@@ -83,13 +85,12 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/infoStorageAndRam_cl"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:background="?android:attr/selectableItemBackground">
+                android:background="@drawable/blue_stroke_button_bg">
 
                 <ImageView
                     android:id="@+id/imageView16"
@@ -107,8 +108,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
                     android:text="Storage &amp; Ram"
+                    android:textColor="@color/colorTextTwo"
                     android:textStyle="bold"
-                     app:layout_constraintBottom_toBottomOf="@+id/imageView16"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView16"
                     app:layout_constraintStart_toEndOf="@+id/imageView16"
                     app:layout_constraintTop_toTopOf="@+id/imageView16"
                     app:layout_constraintVertical_bias="0.512" />
@@ -130,7 +132,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:background="?android:attr/selectableItemBackground">
+                android:background="@drawable/blue_stroke_button_bg">
 
                 <ImageView
                     android:id="@+id/imageView17"
@@ -138,7 +140,7 @@
                     android:layout_height="25dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="15dp"
-                     app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -147,8 +149,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
                     android:text="Feature's"
+                    android:textColor="@color/colorTextTwo"
                     android:textStyle="bold"
-                     app:layout_constraintBottom_toBottomOf="@+id/imageView17"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView17"
                     app:layout_constraintStart_toEndOf="@+id/imageView17"
                     app:layout_constraintTop_toTopOf="@+id/imageView17"
                     app:layout_constraintVertical_bias="0.512" />
@@ -169,7 +172,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:background="?android:attr/selectableItemBackground">
+                android:background="@drawable/blue_stroke_button_bg">
 
                 <ImageView
                     android:id="@+id/imageView18"
@@ -187,8 +190,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
                     android:text="Mobile"
+                    android:textColor="@color/colorTextTwo"
                     android:textStyle="bold"
-                     app:layout_constraintBottom_toBottomOf="@+id/imageView18"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView18"
                     app:layout_constraintStart_toEndOf="@+id/imageView18"
                     app:layout_constraintTop_toTopOf="@+id/imageView18"
                     app:layout_constraintVertical_bias="0.512" />
@@ -209,7 +213,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:background="?android:attr/selectableItemBackground">
+                android:background="@drawable/blue_stroke_button_bg">
 
                 <ImageView
                     android:id="@+id/imageView19"
@@ -227,8 +231,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
                     android:text="Network"
+                    android:textColor="@color/colorTextTwo"
                     android:textStyle="bold"
-                     app:layout_constraintBottom_toBottomOf="@+id/imageView19"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView19"
                     app:layout_constraintStart_toEndOf="@+id/imageView19"
                     app:layout_constraintTop_toTopOf="@+id/imageView19"
                     app:layout_constraintVertical_bias="0.512" />
@@ -245,13 +250,12 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/infoProcessor_cl"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:background="?android:attr/selectableItemBackground">
+                android:background="@drawable/blue_stroke_button_bg">
 
                 <ImageView
                     android:id="@+id/imageView21"
@@ -259,7 +263,7 @@
                     android:layout_height="25dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="15dp"
-                     app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -268,8 +272,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
                     android:text="Processor"
+                    android:textColor="@color/colorTextTwo"
                     android:textStyle="bold"
-                     app:layout_constraintBottom_toBottomOf="@+id/imageView21"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView21"
                     app:layout_constraintStart_toEndOf="@+id/imageView21"
                     app:layout_constraintTop_toTopOf="@+id/imageView21"
                     app:layout_constraintVertical_bias="0.512" />
@@ -290,7 +295,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:background="?android:attr/selectableItemBackground">
+                android:background="@drawable/blue_stroke_button_bg">
 
                 <ImageView
                     android:id="@+id/imageView22"
@@ -298,7 +303,7 @@
                     android:layout_height="25dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="15dp"
-                     app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -307,8 +312,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
                     android:text="Camera"
+                    android:textColor="@color/colorTextTwo"
                     android:textStyle="bold"
-                     app:layout_constraintBottom_toBottomOf="@+id/imageView22"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView22"
                     app:layout_constraintStart_toEndOf="@+id/imageView22"
                     app:layout_constraintTop_toTopOf="@+id/imageView22"
                     app:layout_constraintVertical_bias="0.512" />
@@ -329,7 +335,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:background="?android:attr/selectableItemBackground">
+                android:background="@drawable/blue_stroke_button_bg">
 
                 <ImageView
                     android:id="@+id/imageView23"
@@ -337,7 +343,7 @@
                     android:layout_height="25dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="15dp"
-                     app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -346,8 +352,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
                     android:text="Sensors"
+                    android:textColor="@color/colorTextTwo"
                     android:textStyle="bold"
-                     app:layout_constraintBottom_toBottomOf="@+id/imageView23"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView23"
                     app:layout_constraintStart_toEndOf="@+id/imageView23"
                     app:layout_constraintTop_toTopOf="@+id/imageView23"
                     app:layout_constraintVertical_bias="0.512" />
@@ -368,7 +375,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:background="?android:attr/selectableItemBackground">
+                android:background="@drawable/blue_stroke_button_bg">
 
                 <ImageView
                     android:id="@+id/imageView24"
@@ -376,7 +383,7 @@
                     android:layout_height="25dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="15dp"
-                     app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -385,8 +392,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
                     android:text="Bluetooth"
+                    android:textColor="@color/colorTextTwo"
                     android:textStyle="bold"
-                     app:layout_constraintBottom_toBottomOf="@+id/imageView24"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView24"
                     app:layout_constraintStart_toEndOf="@+id/imageView24"
                     app:layout_constraintTop_toTopOf="@+id/imageView24"
                     app:layout_constraintVertical_bias="0.512" />
@@ -407,7 +415,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:background="?android:attr/selectableItemBackground">
+                android:background="@drawable/blue_stroke_button_bg">
 
                 <ImageView
                     android:id="@+id/imageView25"
@@ -425,8 +433,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
                     android:text="Display"
+                    android:textColor="@color/colorTextTwo"
                     android:textStyle="bold"
-                     app:layout_constraintBottom_toBottomOf="@+id/imageView25"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView25"
                     app:layout_constraintStart_toEndOf="@+id/imageView25"
                     app:layout_constraintTop_toTopOf="@+id/imageView25"
                     app:layout_constraintVertical_bias="0.512" />
