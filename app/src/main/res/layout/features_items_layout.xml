@@ -18,7 +18,7 @@
 
 
         <TextView
-            android:textColor="@color/colorListText"
+            android:textColor="@color/colorTextTwo"
             android:id="@+id/featureItemName_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -47,7 +47,7 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginTop="10dp"
-            android:background="@color/colorCirclePbBgNarrow"
+            android:background="@color/colorAccent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/featureItem_tv"
             app:layout_constraintStart_toStartOf="@+id/featureItemName_tv"

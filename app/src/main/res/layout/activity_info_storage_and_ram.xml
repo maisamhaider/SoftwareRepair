@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
+    android:background="@android:color/white"
     tools:context=".activities.InfoStorageAndRamActivity">
     <TextView
         android:layout_margin="20dp"
@@ -14,41 +15,64 @@
         android:text="Repair System for Android"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
-    <TextView
-        android:layout_marginTop="5dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="5dp"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:textColor="@color/colorTextTwo"
-        android:text="Storage Information"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-    <TextView
-        android:layout_marginTop="2dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="5dp"
-         android:textStyle="bold"
-        android:textColor="@color/colorTextThree"
-        android:text="Internal Storage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
 
-    <include layout="@layout/info_storage_xml"/>
-    <TextView
-        android:layout_marginTop="5dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="5dp"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:textColor="@color/colorTextTwo"
-        android:text="RAM Information"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+    <ScrollView
+        android:scrollbars="none"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:background="@android:color/white"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="5dp"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/colorTextTwo"
+                android:text="Storage Information"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_marginTop="2dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="5dp"
+                android:textStyle="bold"
+                android:textColor="@color/colorTextThree"
+                android:text="Internal Storage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
 
-    <include
-        layout="@layout/info_ram_xml"
-      />
+            <include layout="@layout/info_storage_xml"/>
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="5dp"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/colorTextTwo"
+                android:text="RAM Information"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_marginTop="2dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="5dp"
+                android:textStyle="bold"
+                android:textColor="@color/colorTextThree"
+                android:text="RAM Used"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <include
+                layout="@layout/info_ram_xml"
+                />
+
+        </LinearLayout>
+    </ScrollView>
+
 
 
 </LinearLayout>

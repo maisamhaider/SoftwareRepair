@@ -14,16 +14,14 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
         android:text="Repair System for android"
-        android:textColor="@color/colorTextHeader"
-        android:textSize="18sp"
+         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:textSize="14sp"
-        android:textColor="@color/colorListText"
-        android:id="@+id/textView24"
+         android:id="@+id/textView24"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
@@ -73,25 +71,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Hardware Testing"
-                    android:textColor="@color/colorListText"
-                    android:textSize="16sp"
+                     android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Option diagnostic which allow you to check \nhardware problems"
-                    android:textColor="@color/colorTextDulTwo" />
+                    />
             </LinearLayout>
-
-            <View
-                android:layout_width="0dp"
-                android:layout_height="1dp"
-                android:layout_marginTop="10dp"
-                android:background="@color/colorTextDul"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/imageView1"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -125,8 +113,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Phone Cooler"
-                    android:textColor="@color/colorListText"
-                    android:textSize="16sp"
+                     android:textSize="16sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/imageView2"
@@ -135,20 +122,9 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Cool down your phone and reduce CPU usage\nby closing the app causing temperature"
-                    android:textColor="@color/colorTextDulTwo" />
+                    android:text="Cool down your phone and reduce CPU usage\nby closing the app causing temperature" />
             </LinearLayout>
 
-
-            <View
-                android:layout_width="0dp"
-                android:layout_height="1dp"
-                android:layout_marginTop="10dp"
-                android:background="@color/colorTextDul"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/imageView2"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -184,8 +160,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Back Up Apps"
-                    android:textColor="@color/colorListText"
-                    android:textSize="16sp"
+                     android:textSize="16sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/imageView3"
@@ -195,18 +170,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Now save data charges and time by backup\nand restore apps"
-                    android:textColor="@color/colorTextDulTwo" />
+                      />
             </LinearLayout>
 
 
-            <View
-                android:layout_width="0dp"
-                android:layout_height="1dp"
-                android:layout_marginTop="10dp"
-                android:background="@color/colorTextDul"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/imageView3"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -230,8 +198,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Root Checker"
-                    android:textColor="@color/colorListText"
-                    android:textSize="16sp"
+                     android:textSize="16sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/imageView4"
@@ -241,7 +208,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Verify proper root (Superuser) access is \nconfigured and working using Root Checker! Free"
-                    android:textColor="@color/colorTextDulTwo" />
+                     />
             </LinearLayout>
 
             <ImageView
@@ -254,14 +221,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <View
-                android:layout_width="0dp"
-                android:layout_height="1dp"
-                android:layout_marginTop="10dp"
-                android:background="@color/colorTextDul"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/imageView4"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>

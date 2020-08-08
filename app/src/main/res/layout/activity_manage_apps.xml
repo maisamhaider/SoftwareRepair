@@ -13,7 +13,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:text="Manage Apps"
-        android:textColor="@color/colorTextHeader"
+        android:textColor="@color/colorTextOne"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"

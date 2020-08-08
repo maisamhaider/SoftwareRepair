@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
          android:text="Speaker Test"
         android:textSize="12sp"
-        android:textColor="@color/colorListText"
+        android:textColor="@color/colorTextTwo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintStart_toStartOf="parent"

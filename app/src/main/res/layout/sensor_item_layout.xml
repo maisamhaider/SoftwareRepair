@@ -11,7 +11,7 @@
     <TextView
         android:textSize="14sp"
         android:textStyle="bold"
-        android:textColor="@color/colorListText"
+        android:textColor="@color/colorTextTwo"
         android:id="@+id/title_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
