@@ -116,7 +116,7 @@
                     android:id="@+id/simCrdTstVal_textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/colorTextDul"
+                    android:textColor="@color/colorTextThree"
                     android:visibility="gone" />
             </LinearLayout>
 
@@ -217,7 +217,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
@@ -238,7 +238,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:visibility="gone" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -281,7 +281,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/checkBluetooth_linearLayout"
             android:layout_width="0dp"
-            android:layout_height="100"
+            android:layout_height="100dp"
             android:layout_marginTop="8dp"
             android:layout_weight="1"
             android:background="@drawable/blue_stroke_button_bg"
@@ -319,15 +319,12 @@
                     android:textColor="@android:color/black"
                     tools:layout_editor_absoluteX="5dp"
                     tools:layout_editor_absoluteY="5dp" />
-
+                <TextView
+                    android:id="@+id/bluetoothState_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone" />
             </LinearLayout>
-
-            <TextView
-                android:id="@+id/bluetoothState_textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:visibility="gone" />
-
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
