@@ -1,7 +1,9 @@
 package com.example.softwarerepair.activities;
 
 import android.content.pm.PackageManager;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,12 +21,14 @@ public class EachAppInfo extends AppCompatActivity {
     TimeUtil timeUtil ;
     MathCalculationsUtil mathCalculationsUtil;
     TextView tvAppName,tvVersion,tvSize,tvInstallTime,tvUpdateTime;
+    ImageView ivAppIcon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_each_app_info);
 
+        ivAppIcon = findViewById(R.id.iv_icon);
         tvAppName = findViewById(R.id.app_name_tv);
         tvVersion = findViewById(R.id.version_tv);
         tvSize = findViewById(R.id.tv_size);
@@ -40,11 +44,13 @@ public class EachAppInfo extends AppCompatActivity {
         String appName = applicationUtility.getAppName(pkgName);
         String appInstalledTime = timeUtil.appInstalledTime(applicationUtility.getAppInstallTime(pkgName,false));
         String appLastUpdateTime = timeUtil.appInstalledTime(applicationUtility.getAppInstallTime(pkgName,true));
+        Drawable iconDrawable = applicationUtility.getAppInformation(pkgName,StringsAnnotations.APP_ICON);
 
         tvAppName.setText(appName);
         tvVersion.setText(appVersion);
         tvInstallTime.setText(appInstalledTime);
         tvUpdateTime.setText(appLastUpdateTime);
+        ivAppIcon.setImageDrawable(iconDrawable);
 
         try {
             String appSize = mathCalculationsUtil.getCalculatedDataSizeWithPrefix((float)applicationUtility.getAppSize(pkgName));
@@ -53,6 +59,7 @@ public class EachAppInfo extends AppCompatActivity {
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }
+
 
 
     }
