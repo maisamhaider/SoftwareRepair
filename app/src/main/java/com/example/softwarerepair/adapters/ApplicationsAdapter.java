@@ -125,13 +125,14 @@ public class ApplicationsAdapter extends RecyclerView.Adapter<ApplicationsAdapte
    public class ApplicationsHolder extends RecyclerView.ViewHolder {
 
 
-       ConstraintLayout unInstallApp_cl, detailApp_cl;
+       ConstraintLayout unInstallApp_cl, detailApp_cl,detailInfo_cl;
        TextView allAppName_Tv;
        ImageView allAppImage_Iv;
        ConstraintLayout applicationRvLoMain_CL;
         public ApplicationsHolder(@NonNull View itemView) {
             super( itemView );
 
+            detailInfo_cl = itemView.findViewById(R.id.detailInfo_cl);
             unInstallApp_cl = itemView.findViewById(R.id.unInstallApp_cl);
             detailApp_cl = itemView.findViewById(R.id.detailApp_cl);
             allAppName_Tv = itemView.findViewById(R.id.allAppName_Tv);
