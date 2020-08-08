@@ -22,7 +22,7 @@
 
     <TextView
         android:textSize="14sp"
-        android:textColor="@android:color/black"
+        android:textColor="@color/colorListText"
         android:id="@+id/textView24"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -73,7 +73,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Hardware Testing"
-                    android:textColor="@android:color/black"
+                    android:textColor="@color/colorListText"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
@@ -81,7 +81,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Option diagnostic which allow you to check \nhardware problems"
-                    android:textColor="@color/colorBottomMenuText" />
+                    android:textColor="@color/colorTextDulTwo" />
             </LinearLayout>
 
             <View
@@ -125,7 +125,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Phone Cooler"
-                    android:textColor="@android:color/black"
+                    android:textColor="@color/colorListText"
                     android:textSize="16sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -136,7 +136,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Cool down your phone and reduce CPU usage\nby closing the app causing temperature"
-                    android:textColor="@color/colorBottomMenuText" />
+                    android:textColor="@color/colorTextDulTwo" />
             </LinearLayout>
 
 
@@ -184,7 +184,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Back Up Apps"
-                    android:textColor="@android:color/black"
+                    android:textColor="@color/colorListText"
                     android:textSize="16sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -195,7 +195,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Now save data charges and time by backup\nand restore apps"
-                    android:textColor="@color/colorBottomMenuText" />
+                    android:textColor="@color/colorTextDulTwo" />
             </LinearLayout>
 
 
@@ -230,7 +230,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Root Checker"
-                    android:textColor="@android:color/black"
+                    android:textColor="@color/colorListText"
                     android:textSize="16sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -241,7 +241,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Verify proper root (Superuser) access is \nconfigured and working using Root Checker! Free"
-                    android:textColor="@color/colorBottomMenuText" />
+                    android:textColor="@color/colorTextDulTwo" />
             </LinearLayout>
 
             <ImageView

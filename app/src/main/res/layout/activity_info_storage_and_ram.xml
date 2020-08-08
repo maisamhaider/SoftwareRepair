@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".activities.InfoStorageAndRamActivity">
+    <TextView
+        android:layout_margin="20dp"
+        android:textColor="@color/colorTextHeader"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:text="Repair System for Android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="5dp"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@color/colorListText"
+        android:text="Storage Information"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <include layout="@layout/info_storage_xml"/>
+    <TextView
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="5dp"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@color/colorListText"
+        android:text="RAM Information"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <include
+        layout="@layout/info_ram_xml"
+      />
+
+
+</LinearLayout>
