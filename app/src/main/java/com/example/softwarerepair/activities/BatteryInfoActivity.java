@@ -4,7 +4,9 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.pm.ActivityInfo;
 import android.os.BatteryManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -12,8 +14,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.softwarerepair.R;
 import com.example.softwarerepair.utils.MathCalculationsUtil;
- import com.mikhaellopez.circularprogressbar.CircularProgressBar;
+import com.mikhaellopez.circularprogressbar.CircularProgressBar;
 import com.skydoves.progressview.ProgressView;
+import com.skydoves.progressview.ProgressViewOrientation;
 
 import github.nisrulz.easydeviceinfo.base.EasyBatteryMod;
 
@@ -28,6 +31,8 @@ public class BatteryInfoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_battery_info);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
         mathCalculationsUtil = new MathCalculationsUtil();
         bHealth_tv = findViewById(R.id.bHealth_tv);
         TextView batteryType_tv = findViewById(R.id.batteryType_tv);
@@ -37,7 +42,11 @@ public class BatteryInfoActivity extends AppCompatActivity {
         bStatus_tv = findViewById(R.id.bStatus_tv);
         circularProgressBar = findViewById(R.id.circularProgressBar);
         progressView1 = findViewById(R.id.progressView1);
-
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            progressView1.setOrientation(ProgressViewOrientation.VERTICAL);
+        } else {
+            progressView1.setOrientation(ProgressViewOrientation.HORIZONTAL);
+        }
         circularProgressBar.setProgressMax(100f);
         circularProgressBar.setProgressDirection(CircularProgressBar.ProgressDirection.TO_RIGHT);
         circularProgressBar.setProgressBarWidth(8f); // in DP
@@ -69,15 +78,15 @@ public class BatteryInfoActivity extends AppCompatActivity {
             int bLevel = (int) (((float) level / (float) scale) * 100.0f);
 
             circularProgressBar.setProgressWithAnimation(bLevel, (long) 1000);
-             progressView1.setProgress(bLevel);
+            progressView1.setProgress(bLevel);
             progressView1.setLabelText(bLevel + "%");
-             if (bLevel == 100) {
+            if (bLevel == 100) {
                 progressView1.setLabelText("Full");
 
 
-             } else if (bLevel < 15) {
+            } else if (bLevel < 15) {
                 progressView1.setLabelText("Low battery");
-              }
+            }
 
             {
                 if (batteryStatus == BatteryManager.BATTERY_STATUS_CHARGING) {

@@ -73,10 +73,7 @@ public class InfoFragment extends Fragment {
            Intent intent = new Intent(getContext(), InfoStorageAndRamActivity.class) ;
            getActivity().startActivity(intent);
        });
-       view.findViewById(R.id.infoCamera_cl).setOnClickListener(v -> {
-//           Intent intent = new Intent(getContext(), DisplayInfoActivity.class) ;
-//           getActivity().startActivity(intent);
-       });
+
         return view;
     }
 }

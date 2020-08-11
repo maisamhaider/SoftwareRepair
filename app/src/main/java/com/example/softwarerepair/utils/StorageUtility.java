@@ -126,16 +126,14 @@ public class StorageUtility {
                 }
             }
         }
-
         return result;
     }
-
 
     public void copyFileOrDirectory(String srcDir) {
 
         try {
             File src = new File(srcDir);
-            File dst = new File(Environment.getExternalStorageDirectory() + "/SoftwareRepair/Backup_App",+System.currentTimeMillis()+ src.getName());
+            File dst = new File(Environment.getExternalStorageDirectory() + "/SoftwareRepair/Backup_App", +System.currentTimeMillis() + src.getName());
 
             if (src.isDirectory()) {
 
@@ -170,15 +168,15 @@ public class StorageUtility {
         }
     }
 
-    public List<FileModel> getTempFile(String path) {
+    public List<FileModel> getAllUnUsableFile(String path) {
         File fold = new File(path);
         List<FileModel> fileList = new ArrayList<>();
         File[] mlist = fold.listFiles();
-        File[] mFilelist = fold.listFiles(new AllTempFilter());
+        File[] mFilelist = fold.listFiles(new AllUnUsableFilter());
         if (mlist != null) {
             for (File f : mlist) {
                 if (f.isDirectory()) {
-                    List<FileModel> fList = getTempFile(f.getAbsolutePath());
+                    List<FileModel> fList = getAllUnUsableFile(f.getAbsolutePath());
                     fileList.addAll(fList);
                 }
             }
@@ -197,21 +195,153 @@ public class StorageUtility {
         return fileList;
     }
 
-    public static class AllTempFilter implements FileFilter {
+
+    public long getLogFileSize(String path) {
+        long size = 0;
+        File fold = new File(path);
+        File[] mlist = fold.listFiles();
+        File[] mFilelist = fold.listFiles(new AllLogFilter());
+        if (mlist != null) {
+            for (File f : mlist) {
+                if (f.isDirectory()) {
+                    getLogFileSize(f.getAbsolutePath());
+                }
+            }
+        }
+        if (mFilelist != null) {
+            for (File f : mFilelist) {
+                size = size + f.length();
+            }
+        }
+        return size;
+    }
+
+    public long getTempFileSize(String path) {
+        long size = 0;
+        File fold = new File(path);
+        File[] mlist = fold.listFiles();
+        File[] mFilelist = fold.listFiles(new AllTempFilter());
+        if (mlist != null) {
+            for (File f : mlist) {
+                if (f.isDirectory()) {
+                    getTempFileSize(f.getAbsolutePath());
+                }
+            }
+        }
+        if (mFilelist != null) {
+            for (File f : mFilelist) {
+                size = size + f.length();
+            }
+        }
+        return size;
+    } public long getApkFileSize(String path) {
+        long size = 0;
+        File fold = new File(path);
+        File[] mlist = fold.listFiles();
+        File[] mFilelist = fold.listFiles(new AllApkFilter());
+        if (mlist != null) {
+            for (File f : mlist) {
+                if (f.isDirectory()) {
+                    getApkFileSize(f.getAbsolutePath());
+                }
+            }
+        }
+        if (mFilelist != null) {
+            for (File f : mFilelist) {
+                size = size + f.length();
+            }
+        }
+        return size;
+    }
+
+    public long getCachesSize(String path) {
+        long size = 0;
+        File fold = new File(path);
+        File[] mlist = fold.listFiles();
+        File[] mFilelist = fold.listFiles(new AllCacheFilter());
+        if (mlist != null) {
+            for (File f : mlist) {
+                if (f.isDirectory()) {
+                    getCachesSize(f.getAbsolutePath());
+                }
+            }
+        }
+        if (mFilelist != null) {
+            for (File f : mFilelist) {
+                size = size + f.length();
+            }
+        }
+        return size;
+    }
+    public long getAllUnUsableSize(String path) {
+        long size = 0;
+        File fold = new File(path);
+        File[] mlist = fold.listFiles();
+        File[] mFilelist = fold.listFiles(new AllUnUsableFilter());
+        if (mlist != null) {
+            for (File f : mlist) {
+                if (f.isDirectory()) {
+                    getAllUnUsableSize(f.getAbsolutePath());
+                }
+            }
+        }
+        if (mFilelist != null) {
+            for (File f : mFilelist) {
+                size = size + f.length();
+            }
+        }
+        return size;
+    }
+
+
+
+    public static class AllUnUsableFilter implements FileFilter {
         @Override
         public boolean accept(File pathname) {
             String path = pathname.getPath();
             return (path.endsWith(".tmp")
-                    ||path.endsWith(".TEMP")
-                    ||path.endsWith(".csi")
-                    ||path.endsWith(".cfa")
-                    ||path.endsWith(".egt")
-                    ||path.endsWith(".clean")
-                    ||path.endsWith(".cache")
-                    ||path.endsWith(".imagecache")
-                    ||path.endsWith(".dmp")
-                    ||path.endsWith(".TEMP")
+                    || path.endsWith(".TEMP")
+                    || path.endsWith(".csi")
+                    || path.endsWith(".cfa")
+                    || path.endsWith(".egt")
+                    || path.endsWith(".clean")
+                    || path.endsWith(".cache")
+                    || path.endsWith(".imagecache")
+                    || path.endsWith(".dmp")
+                    || path.endsWith(".log")
+                    || path.endsWith(".apk")
             );
+        }
+    }
+
+    public static class AllTempFilter implements FileFilter {
+        @Override
+        public boolean accept(File pathname) {
+            String path = pathname.getPath();
+            return (path.endsWith(".tmp") || path.endsWith(".TEMP"));
+        }
+    }
+    public static class AllApkFilter implements FileFilter {
+        @Override
+        public boolean accept(File pathname) {
+            String path = pathname.getPath();
+            return (path.endsWith(".apk"));
+        }
+    }
+
+    public static class AllLogFilter implements FileFilter {
+        @Override
+        public boolean accept(File pathname) {
+            String path = pathname.getPath();
+            return (path.endsWith(".log"));
+        }
+    }
+
+    public static class AllCacheFilter implements FileFilter {
+        @Override
+        public boolean accept(File pathname) {
+            String path = pathname.getPath();
+            return path.endsWith(".cache");
         }
     }
 

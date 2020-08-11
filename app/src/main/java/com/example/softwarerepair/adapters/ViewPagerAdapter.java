@@ -10,11 +10,10 @@ import com.example.softwarerepair.annotations.StringsAnnotations;
 import com.example.softwarerepair.fragments.HomeFragment;
 import com.example.softwarerepair.fragments.InfoFragment;
 import com.example.softwarerepair.fragments.MoreFragment;
-import com.example.softwarerepair.fragments.ToolsFragment;
 
 public class ViewPagerAdapter extends FragmentPagerAdapter {
 
-    private static final String[] TAB_TITLES = new String[] { StringsAnnotations.HOME,StringsAnnotations.TOOLS,StringsAnnotations.INFO,StringsAnnotations.MORE };
+    private static final String[] TAB_TITLES = new String[] { StringsAnnotations.HOME,StringsAnnotations.INFO,StringsAnnotations.MORE };
 
     public ViewPagerAdapter(@NonNull FragmentManager fm, int behavior) {
         super(fm, behavior);
@@ -29,12 +28,9 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
             case 0:
                 return HomeFragment.newInstance();
             case 1:
-                return ToolsFragment.newInstance();
-            case 2:
                 return InfoFragment.newInstance( );
-            case 3:
+            case 2:
                 return MoreFragment.newInstance();
-
             default:
                 return null;
         }
@@ -48,6 +44,6 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return 4;
+        return 3;
     }
 }

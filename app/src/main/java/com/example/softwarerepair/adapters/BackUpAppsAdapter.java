@@ -10,7 +10,6 @@ import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -67,13 +66,10 @@ public class BackUpAppsAdapter extends RecyclerView.Adapter<BackUpAppsAdapter.Ap
          holder.backupAppsName_Tv.setText( appName );
 
         Glide.with(context).load((Drawable) applicationUtility.getAppInformation(appPackage, StringsAnnotations.APP_ICON)).placeholder(R.mipmap.ic_launcher).into(holder.backupAppsImage_Iv);
+        holder.backUpPackageName.setText(appPackage);
 
 
-        holder.backupAppsRvLoMain_CL.setOnClickListener(v -> {
-
-        });
-
-         holder.backupAppsExtract_btn.setOnClickListener(v -> {
+         holder.backupAppsExtract_cl.setOnClickListener(v -> {
                 String packageName = appsList.get(position);
              PackageManager pm = context.getPackageManager();
              PackageInfo p = null;
@@ -95,7 +91,7 @@ public class BackUpAppsAdapter extends RecyclerView.Adapter<BackUpAppsAdapter.Ap
 
         });
 
-         holder.backupAppsShare_btn.setOnClickListener(v -> {
+         holder.backupAppsShare_cl.setOnClickListener(v -> {
 
              String packageName = appsList.get(position);
              PackageManager pm = context.getPackageManager();
@@ -104,20 +100,12 @@ public class BackUpAppsAdapter extends RecyclerView.Adapter<BackUpAppsAdapter.Ap
                  p = pm.getPackageInfo(packageName, 0);
                  ApplicationInfo a = p.applicationInfo;
                  if (!((a.flags & ApplicationInfo.FLAG_SYSTEM) != 0)) {
-                     File apk = new File(a.publicSourceDir);
-                     Intent intent = new Intent();
+                      Intent intent = new Intent();
                      intent.setAction(Intent.ACTION_SEND);
-
-//                     Uri apkURI = apk.createNewFile()
-////                      Uri apkURI = FilePr ovider.getUriForFile(context, context.getPackageName() + ".provider", apk.getAbsoluteFile());
-//                     intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-//                     intent.setType("application/*");
-//                     intent.putExtra(Intent.EXTRA_STREAM, apkURI );
-//                     context.startActivity(Intent.createChooser(intent, "Share via"));
-
-
-
-
+                     intent.putExtra(Intent.EXTRA_TEXT,
+                             "https://play.google.com/store/apps/details?id=" + packageName);
+                     intent.setType("text/plain");
+                     context.startActivity(intent);
                  }
 
 
@@ -138,16 +126,16 @@ public class BackUpAppsAdapter extends RecyclerView.Adapter<BackUpAppsAdapter.Ap
    public class ApplicationsHolder extends RecyclerView.ViewHolder {
 
 
-       Button backupAppsShare_btn,backupAppsExtract_btn;
-       TextView backupAppsName_Tv;
+       ConstraintLayout backupAppsRvLoMain_CL,backupAppsShare_cl,backupAppsExtract_cl;
+       TextView backupAppsName_Tv,backUpPackageName;
        ImageView backupAppsImage_Iv;
-       ConstraintLayout backupAppsRvLoMain_CL;
         public ApplicationsHolder(@NonNull View itemView) {
             super( itemView );
 
-            backupAppsShare_btn = itemView.findViewById(R.id.backupAppsShare_btn);
-            backupAppsExtract_btn = itemView.findViewById(R.id.backupAppsExtract_btn);
+            backupAppsShare_cl = itemView.findViewById(R.id.backupAppsShare_cl);
+            backupAppsExtract_cl = itemView.findViewById(R.id.backupAppsExtract_cl);
             backupAppsName_Tv = itemView.findViewById(R.id.backupAppsName_Tv);
+            backUpPackageName = itemView.findViewById(R.id.backUpPackageName);
             backupAppsImage_Iv = itemView.findViewById(R.id.backupAppsImage_Iv);
             backupAppsRvLoMain_CL = itemView.findViewById(R.id.backupAppsRvLoMain_CL);
         }

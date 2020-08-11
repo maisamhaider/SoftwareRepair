@@ -1,10 +1,12 @@
 package com.example.softwarerepair.activities;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Bundle;
-import android.view.View;
+import android.provider.Settings;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -20,32 +22,27 @@ import com.example.softwarerepair.utils.TimeUtil;
 
 public class EachAppInfo extends AppCompatActivity {
 
-    private ApplicationUtility applicationUtility;
-    private TimeUtil timeUtil;
-    private MathCalculationsUtil mathCalculationsUtil;
-    private TextView tvAppName, tvVersion, tvSize, tvInstallTime, tvUpdateTime;
-    private ImageView ivAppIcon;
-    private LinearLayout llOpenApp, llOpenSetting, llCheckOnStore;
     private String pkgName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_each_app_info);
+        setRequestedOrientation( ActivityInfo.SCREEN_ORIENTATION_PORTRAIT );
 
-        ivAppIcon = findViewById(R.id.iv_icon);
-        tvAppName = findViewById(R.id.app_name_tv);
-        tvVersion = findViewById(R.id.version_tv);
-        tvSize = findViewById(R.id.tv_size);
-        tvInstallTime = findViewById(R.id.install_time_tv);
-        tvUpdateTime = findViewById(R.id.update_time_tv);
-        llOpenApp = findViewById(R.id.open_app_ll);
-        llCheckOnStore = findViewById(R.id.check_store_ll);
-        llOpenSetting = findViewById(R.id.open_setting_ll);
+        ImageView ivAppIcon = findViewById(R.id.iv_icon);
+        TextView tvAppName = findViewById(R.id.app_name_tv);
+        TextView tvVersion = findViewById(R.id.version_tv);
+        TextView tvSize = findViewById(R.id.tv_size);
+        TextView tvInstallTime = findViewById(R.id.install_time_tv);
+        TextView tvUpdateTime = findViewById(R.id.update_time_tv);
+        LinearLayout llOpenApp = findViewById(R.id.open_app_ll);
+        LinearLayout llCheckOnStore = findViewById(R.id.check_store_ll);
+        LinearLayout llOpenSetting = findViewById(R.id.open_setting_ll);
 
-        applicationUtility = new ApplicationUtility(this);
-        timeUtil = new TimeUtil();
-        mathCalculationsUtil = new MathCalculationsUtil();
+        ApplicationUtility applicationUtility = new ApplicationUtility(this);
+        TimeUtil timeUtil = new TimeUtil();
+        MathCalculationsUtil mathCalculationsUtil = new MathCalculationsUtil();
         pkgName = getIntent().getStringExtra("pkg");
 
         String appVersion = applicationUtility.getAppInformation(pkgName, StringsAnnotations.APP_VERSION);
@@ -67,30 +64,18 @@ public class EachAppInfo extends AppCompatActivity {
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }
-
-        llOpenApp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent launchIntent = getPackageManager().getLaunchIntentForPackage(pkgName);
-                startActivity( launchIntent );
-            }
+        llOpenApp.setOnClickListener(view -> {
+            Intent launchIntent = getPackageManager().getLaunchIntentForPackage(pkgName);
+            startActivity( launchIntent );
         });
-        llCheckOnStore.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent sendIntent = new Intent();
-                sendIntent.setAction(Intent.ACTION_SEND);
-                sendIntent.putExtra(Intent.EXTRA_TEXT,
-                        "https://play.google.com/store/apps/details?id=" + pkgName);
-                sendIntent.setType("text/plain");
-                startActivity(sendIntent);
-            }
-        });
-        llOpenSetting.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        llCheckOnStore.setOnClickListener(view -> startActivity(new
 
-            }
+                        Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + pkgName))));
+        llOpenSetting.setOnClickListener(view -> {
+            Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+            intent.setData(Uri.parse("package:"+pkgName));
+            startActivity(intent);
+
         });
 
 

@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/white"
+
     android:layout_height="match_parent">
 
     <TextView
@@ -32,6 +33,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+
             <TextView
                 android:id="@+id/textView34"
                 android:layout_width="wrap_content"
@@ -39,7 +41,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
                 android:text="All Information"
-                android:textColor="@android:color/black"
+                android:textColor="@color/colorTextTwo"
                 android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -52,9 +54,11 @@
                 android:background="@drawable/blue_stroke_button_bg">
 
                 <ImageView
+                    android:src="@drawable/ic_battery_usage"
                     android:id="@+id/imageView7"
                     android:layout_width="25dp"
                     android:layout_height="25dp"
+                    android:layout_marginStart="5dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="15dp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -73,14 +77,6 @@
                     app:layout_constraintTop_toTopOf="@+id/imageView7"
                     app:layout_constraintVertical_bias="0.512" />
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@color/colorAccent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView7" />
-
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -96,6 +92,7 @@
                     android:id="@+id/imageView16"
                     android:layout_width="25dp"
                     android:layout_height="25dp"
+                    android:layout_marginStart="5dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="15dp"
                     android:src="@drawable/ic_group"
@@ -115,14 +112,6 @@
                     app:layout_constraintTop_toTopOf="@+id/imageView16"
                     app:layout_constraintVertical_bias="0.512" />
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@color/colorAccent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView16" />
-
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -135,6 +124,8 @@
                 android:background="@drawable/blue_stroke_button_bg">
 
                 <ImageView
+                    android:src="@drawable/ic_feature"
+                    android:layout_marginStart="5dp"
                     android:id="@+id/imageView17"
                     android:layout_width="25dp"
                     android:layout_height="25dp"
@@ -156,14 +147,6 @@
                     app:layout_constraintTop_toTopOf="@+id/imageView17"
                     app:layout_constraintVertical_bias="0.512" />
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@color/colorAccent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView17" />
-
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -175,6 +158,7 @@
                 android:background="@drawable/blue_stroke_button_bg">
 
                 <ImageView
+                    android:layout_marginStart="5dp"
                     android:id="@+id/imageView18"
                     android:layout_width="25dp"
                     android:layout_height="25dp"
@@ -197,56 +181,6 @@
                     app:layout_constraintTop_toTopOf="@+id/imageView18"
                     app:layout_constraintVertical_bias="0.512" />
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@color/colorAccent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView18" />
-
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/infoNetwork_cl"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/blue_stroke_button_bg">
-
-                <ImageView
-                    android:id="@+id/imageView19"
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="15dp"
-                    android:src="@drawable/ic_network_operators"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:text="Network"
-                    android:textColor="@color/colorTextTwo"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="@+id/imageView19"
-                    app:layout_constraintStart_toEndOf="@+id/imageView19"
-                    app:layout_constraintTop_toTopOf="@+id/imageView19"
-                    app:layout_constraintVertical_bias="0.512" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@color/colorAccent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView19" />
-
-
             </androidx.constraintlayout.widget.ConstraintLayout>
 
 
@@ -258,6 +192,8 @@
                 android:background="@drawable/blue_stroke_button_bg">
 
                 <ImageView
+                    android:src="@drawable/ic_procssor"
+                    android:layout_marginStart="5dp"
                     android:id="@+id/imageView21"
                     android:layout_width="25dp"
                     android:layout_height="25dp"
@@ -279,56 +215,9 @@
                     app:layout_constraintTop_toTopOf="@+id/imageView21"
                     app:layout_constraintVertical_bias="0.512" />
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@color/colorAccent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView21" />
-
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/infoCamera_cl"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/blue_stroke_button_bg">
-
-                <ImageView
-                    android:id="@+id/imageView22"
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="15dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:text="Camera"
-                    android:textColor="@color/colorTextTwo"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="@+id/imageView22"
-                    app:layout_constraintStart_toEndOf="@+id/imageView22"
-                    app:layout_constraintTop_toTopOf="@+id/imageView22"
-                    app:layout_constraintVertical_bias="0.512" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@color/colorAccent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView22" />
-
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/infoSensor_cl"
@@ -338,6 +227,8 @@
                 android:background="@drawable/blue_stroke_button_bg">
 
                 <ImageView
+                    android:src="@drawable/ic_sensor"
+                    android:layout_marginStart="5dp"
                     android:id="@+id/imageView23"
                     android:layout_width="25dp"
                     android:layout_height="25dp"
@@ -359,14 +250,6 @@
                     app:layout_constraintTop_toTopOf="@+id/imageView23"
                     app:layout_constraintVertical_bias="0.512" />
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@color/colorAccent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView23" />
-
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -378,6 +261,8 @@
                 android:background="@drawable/blue_stroke_button_bg">
 
                 <ImageView
+                    android:src="@drawable/ic_bluetooth"
+                    android:layout_marginStart="5dp"
                     android:id="@+id/imageView24"
                     android:layout_width="25dp"
                     android:layout_height="25dp"
@@ -399,15 +284,6 @@
                     app:layout_constraintTop_toTopOf="@+id/imageView24"
                     app:layout_constraintVertical_bias="0.512" />
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@color/colorAccent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView24" />
-
-
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -418,6 +294,7 @@
                 android:background="@drawable/blue_stroke_button_bg">
 
                 <ImageView
+                    android:layout_marginStart="5dp"
                     android:id="@+id/imageView25"
                     android:layout_width="25dp"
                     android:layout_height="25dp"
@@ -440,13 +317,6 @@
                     app:layout_constraintTop_toTopOf="@+id/imageView25"
                     app:layout_constraintVertical_bias="0.512" />
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@color/colorAccent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView25" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>

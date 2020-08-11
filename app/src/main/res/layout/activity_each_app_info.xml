@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
+    android:background="@android:color/white"
     tools:context=".activities.EachAppInfo"
 >
 <ScrollView
@@ -15,11 +16,13 @@
     android:scrollbars="none">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@android:color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
 
         <LinearLayout
+            android:background="@android:color/white"
             android:id="@+id/open_setting_ll"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -31,6 +34,7 @@
             app:layout_constraintTop_toTopOf="@+id/check_store_ll">
 
             <ImageView
+                android:layout_gravity="center"
                 android:id="@+id/imageView30"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -46,6 +50,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:background="@android:color/white"
             android:id="@+id/check_store_ll"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -72,6 +77,8 @@
         </LinearLayout>
 
         <LinearLayout
+            android:background="@android:color/white"
+            android:layout_marginTop="10dp"
             android:id="@+id/open_app_ll"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

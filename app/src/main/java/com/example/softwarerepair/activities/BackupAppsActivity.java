@@ -1,5 +1,6 @@
 package com.example.softwarerepair.activities;
 
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,6 +19,7 @@ public class BackupAppsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_backup_apps);
+        setRequestedOrientation( ActivityInfo.SCREEN_ORIENTATION_PORTRAIT );
 
         backupApp_RV = findViewById(R.id.backupApp_RV);
 

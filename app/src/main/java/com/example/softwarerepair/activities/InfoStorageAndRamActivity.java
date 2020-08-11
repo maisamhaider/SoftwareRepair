@@ -4,6 +4,7 @@ import android.animation.ValueAnimator;
 import android.annotation.SuppressLint;
 import android.app.ActivityManager;
 import android.content.Context;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -20,6 +21,8 @@ public class InfoStorageAndRamActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info_storage_and_ram);
+        setRequestedOrientation( ActivityInfo.SCREEN_ORIENTATION_PORTRAIT );
+
         ramAndStorageFun();
     }
 

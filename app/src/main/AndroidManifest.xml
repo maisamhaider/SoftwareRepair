@@ -10,6 +10,7 @@
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.NFC" />
+
     <uses-permission
         android:name="android.permission.DELETE_PACKAGES"
         tools:ignore="ProtectedPermissions" />
@@ -19,15 +20,17 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_artboard_main"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/ic_artboard_main"
         android:supportsRtl="true"
+        android:requestLegacyExternalStorage="true"
+        android:usesCleartextTraffic="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.InfoStorageAndRamActivity"></activity>
+        <activity android:name=".activities.RepairSystemActivity"/>
+        <activity android:name=".activities.InfoStorageAndRamActivity" />
         <activity android:name=".activities.RootCheckerActivity" />
         <activity android:name=".activities.BatteryInfoActivity" />
-        <activity android:name=".activities.StorageAndRamActivity" />
         <activity android:name=".activities.DisplayInfoActivity" />
         <activity android:name=".activities.HardwareInfoActivity" />
         <activity android:name=".activities.FeaturesActivity" />

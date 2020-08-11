@@ -50,6 +50,15 @@
                 android:layout_height="wrap_content"/>
 
             <include layout="@layout/home_frag_buttons_xml"/>
+            <TextView
+                android:textColor="@color/colorTextTwo"
+                android:textStyle="bold"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Favourite Tools"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <include layout="@layout/tools_xml"/>
         </LinearLayout>
     </ScrollView>
 

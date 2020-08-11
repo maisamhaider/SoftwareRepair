@@ -2,6 +2,7 @@ package com.example.softwarerepair.activities;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.content.pm.ResolveInfo;
 import android.content.res.Configuration;
 import android.graphics.Point;
@@ -28,22 +29,23 @@ public class DisplayInfoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_info);
+        setRequestedOrientation( ActivityInfo.SCREEN_ORIENTATION_PORTRAIT );
 
         int screenSize = getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK;
 
-//        tvSize = findViewById(R.id.tv_size);
-//        tvPhysicalSize = findViewById(R.id.tv_physical_size);
-//        tvScreenWidth = findViewById(R.id.tv_screen_width);
-//        tvScreenHeight = findViewById(R.id.tv_screen_height);
-//        tvRefreshRate = findViewById(R.id.tv_refresh_rate);
-//        tvName = findViewById(R.id.tv_name);
-//        tvXDpi = findViewById(R.id.tv_xdpi);
-//        tvYDpi = findViewById(R.id.tv_ydpi);
-//        tvLogicalDensity = findViewById(R.id.tv_logical_density);
-//        tvScaleDensity = findViewById(R.id.tv_scale_density);
-//        tvUsableWidth = findViewById(R.id.tv_usable_width);
-//        tvUsableHeight = findViewById(R.id.tv_usable_height);
-//        bDisplay = findViewById(R.id.b_display_setting);
+        tvSize = findViewById(R.id.tv_size);
+        tvPhysicalSize = findViewById(R.id.tv_physical_size);
+        tvScreenWidth = findViewById(R.id.tv_screen_width);
+        tvScreenHeight = findViewById(R.id.tv_screen_height);
+        tvRefreshRate = findViewById(R.id.tv_refresh_rate);
+        tvName = findViewById(R.id.tv_name);
+        tvXDpi = findViewById(R.id.tv_xdpi);
+        tvYDpi = findViewById(R.id.tv_ydpi);
+        tvLogicalDensity = findViewById(R.id.tv_logical_density);
+        tvScaleDensity = findViewById(R.id.tv_scale_density);
+        tvUsableWidth = findViewById(R.id.tv_usable_width);
+        tvUsableHeight = findViewById(R.id.tv_usable_height);
+        bDisplay = findViewById(R.id.b_display_setting);
 
 
         String toastMsg;

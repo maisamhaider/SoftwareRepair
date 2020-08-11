@@ -33,9 +33,8 @@ public class SensorInfoActivity extends AppCompatActivity {
 
 
         // Print each Sensor available using sSensList as the String to be printed
-        String sSensList = new String("");
-        Sensor tmp;
-        int x, i;
+         Sensor tmp;
+        int  i;
         for (i = 0; i < mSensorList.size(); i++) {
 
             tmp = mSensorList.get(i);

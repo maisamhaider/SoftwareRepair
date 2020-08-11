@@ -11,6 +11,7 @@ import android.content.pm.ResolveInfo;
 import com.example.softwarerepair.annotations.StringsAnnotations;
 
 import java.io.File;
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,6 +20,7 @@ public class ApplicationUtility {
     private static final String SYSTEM_PACKAGE_NAME = "android";
     private Context context;
     PackageManager mPackageManager;
+
 
 
     public ApplicationUtility(Context context) {
@@ -31,11 +33,13 @@ public class ApplicationUtility {
         PackageManager pm = context.getPackageManager();
         List<ApplicationInfo> packages = pm.getInstalledApplications(PackageManager.GET_META_DATA);
         List<String> list = new ArrayList<>();
-        if (!ram) {
+        if (ram) {
             for (ApplicationInfo packageInfo : packages) {
-
-                if (!list.contains(packageInfo.packageName)) {
-                    list.add(packageInfo.packageName);
+                if (!isStopped(packageInfo))
+                {
+                    if (!list.contains(packageInfo.packageName)) {
+                        list.add(packageInfo.packageName);
+                    }
                 }
             }
         } else {
@@ -102,6 +106,28 @@ public class ApplicationUtility {
         return AppPackageName;
     }
 
+    public List<String> getAllActiveApps() {
+
+        PackageManager pm = context.getPackageManager();
+        List<ApplicationInfo> packages = pm.getInstalledApplications(PackageManager.GET_META_DATA);
+        List<String> list = new ArrayList<>();
+
+        for (ApplicationInfo packageInfo : packages) {
+
+            if (isSTOPPED(packageInfo)) {
+                if (!list.contains(packageInfo.packageName)) {
+                    list.add(packageInfo.packageName);
+                }
+            }
+        }
+        return list;
+    }
+
+    private boolean isSTOPPED(ApplicationInfo pkgInfo) {
+
+        return ((pkgInfo.flags & ApplicationInfo.FLAG_STOPPED) == 0);
+    }
+
     public ArrayList<String> getAllAppsList() {
 
         ArrayList<String> AppPackageName = new ArrayList<>();
@@ -115,7 +141,6 @@ public class ApplicationUtility {
         for (ResolveInfo resolveInfo : resolveInfoList) {
 
             ActivityInfo activityInfo = resolveInfo.activityInfo;
-
 
             if (!AppPackageName.contains(activityInfo.applicationInfo.packageName)) {
                 AppPackageName.add(activityInfo.applicationInfo.packageName);
@@ -242,6 +267,32 @@ public class ApplicationUtility {
             e.printStackTrace();
         }
         return false;
+    }
+
+    public long getAppTime(String apkPackageName,String whatKind)
+    {
+        long timeStamp = 0 ;
+        PackageManager pm = context.getPackageManager();
+
+        try {
+            if (StringsAnnotations.INSTALLATION.matches(whatKind))
+            {
+                PackageInfo info = pm.getPackageInfo(apkPackageName, 0);
+                Field field = PackageInfo.class.getField("firstInstallTime");
+                timeStamp = field.getLong(info);
+            }else {
+                PackageInfo info = pm.getPackageInfo(apkPackageName, 0);
+                Field field = PackageInfo.class.getField("lastUpdateTime");
+                timeStamp = field.getLong(info);
+            }
+
+        } catch (PackageManager.NameNotFoundException | IllegalAccessException e1) {
+            e1.printStackTrace();
+        } catch (Exception e1) {
+            e1.printStackTrace();
+        }
+
+        return timeStamp;
     }
 
 

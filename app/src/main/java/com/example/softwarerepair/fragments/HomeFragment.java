@@ -19,14 +19,21 @@ import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 
 import com.example.softwarerepair.R;
+import com.example.softwarerepair.activities.BackupAppsActivity;
 import com.example.softwarerepair.activities.BatteryInfoActivity;
 import com.example.softwarerepair.activities.BoosterRamActivity;
 import com.example.softwarerepair.activities.CacheCleanActivity;
 import com.example.softwarerepair.activities.EmptyFoldersActivity;
+import com.example.softwarerepair.activities.HardwareTestingActivity;
 import com.example.softwarerepair.activities.ManageAppsActivity;
+import com.example.softwarerepair.activities.PhoneCoolerActivity;
+import com.example.softwarerepair.activities.RepairSystemActivity;
+import com.example.softwarerepair.activities.RootCheckerActivity;
 import com.example.softwarerepair.utils.MathCalculationsUtil;
 import com.example.softwarerepair.utils.StorageUtility;
-import com.mikhaellopez.circularprogressbar.CircularProgressBar;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import antonkozyriatskyi.circularprogressindicator.CircularProgressIndicator;
 
@@ -34,10 +41,10 @@ public class HomeFragment extends Fragment {
     private View view;
      StorageUtility storageUtility;
     MathCalculationsUtil mathCalculationsUtil;
-    CircularProgressIndicator batteryRoundCorner_pb, storageRoundCorner_pb;
+    CircularProgressIndicator batteryRoundCorner_pb, storageRoundCorner_pb,homeRam_cpb;
     TextView batteryProgressBarPercent_tv;
-
-    public static HomeFragment newInstance() {
+     List<String> appsList = new ArrayList<>();
+     public static HomeFragment newInstance() {
         return new HomeFragment();
     }
 
@@ -57,12 +64,12 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_home, container, false);
-
-        storageUtility = new StorageUtility();
+         storageUtility = new StorageUtility();
         mathCalculationsUtil = new MathCalculationsUtil();
         batteryRoundCorner_pb = view.findViewById(R.id.batteryRoundCorner_pb);
         storageRoundCorner_pb = view.findViewById(R.id.storageRoundCorner_pb);
         batteryProgressBarPercent_tv = view.findViewById(R.id.batteryProgressBarPercent_tv);
+
 
 
         view.findViewById(R.id.homeBatteryIntent_view).setOnClickListener(v -> {
@@ -86,11 +93,11 @@ public class HomeFragment extends Fragment {
         });
         view.findViewById(R.id.boosterRam_cl).setOnClickListener(v -> {
             Intent intent = new Intent(getContext(), BoosterRamActivity.class);
-            getActivity().startActivity(intent);
+             getActivity().startActivity(intent);
         });
         view.findViewById(R.id.repairSystem_cl).setOnClickListener(v -> {
-//              Intent intent = new Intent(getContext(), Repa.class);
-//            getActivity().startActivity(intent);
+              Intent intent = new Intent(getContext(), RepairSystemActivity.class);
+            getActivity().startActivity(intent);
         });
         view.findViewById(R.id.emptyFolder_cl).setOnClickListener(v -> {
             Intent intent = new Intent(getContext(), EmptyFoldersActivity.class);
@@ -102,6 +109,23 @@ public class HomeFragment extends Fragment {
             if (resolveInfo != null) {
                 startActivity(intent);
             }
+        });
+
+        view.findViewById(R.id.backupApp_cl).setOnClickListener(v -> {
+            Intent intent = new Intent(getContext(), BackupAppsActivity.class);
+            getActivity().startActivity(intent);
+        });
+        view.findViewById(R.id.phoneCooler_cl).setOnClickListener(v -> {
+            Intent intent = new Intent(getContext(), PhoneCoolerActivity.class);
+            getActivity().startActivity(intent);
+        });
+        view.findViewById(R.id.hardwareTesting_cl).setOnClickListener(v -> {
+            Intent intent = new Intent(getContext(), HardwareTestingActivity.class);
+            getActivity().startActivity(intent);
+        });
+        view.findViewById(R.id.rootChecker_cl).setOnClickListener(v -> {
+            Intent intent = new Intent(getContext(), RootCheckerActivity.class);
+            getActivity().startActivity(intent);
         });
 
         ramAndStorageFun();
@@ -125,19 +149,24 @@ public class HomeFragment extends Fragment {
         TextView availableRamSize_tv = view.findViewById(R.id.availableRamSize_tv);
         TextView totalRamSize_tv = view.findViewById(R.id.totalRamSize_tv);
         TextView homeRamPercentage_tv = view.findViewById(R.id.homeRamPercentage_tv);
-        CircularProgressBar homeRam_cpb = view.findViewById(R.id.homeRam_cpb);
+        homeRam_cpb  = view.findViewById(R.id.homeRam_cpb);
 
         systemAndAppsSize_tv.setText(mathCalculationsUtil.getCalculatedDataSizeWithPrefix(usedMemory));
         availableRamSize_tv.setText(mathCalculationsUtil.getCalculatedDataSizeWithPrefix(freeMemory));
         totalRamSize_tv.setText(mathCalculationsUtil.getCalculatedDataSizeWithPrefix(totalMemory));
         homeRamPercentage_tv.setText(ramUsagePercentage);
 
-        homeRam_cpb.setProgressMax(totalMemory);
+        homeRam_cpb.setMaxProgress(totalMemory);
         ValueAnimator animator1 = ValueAnimator.ofFloat(0, usedMemory);
         animator1.setDuration(1500);
-        animator1.addUpdateListener(animation -> homeRam_cpb.setProgress(Float.parseFloat(animation.getAnimatedValue().toString())));
+        animator1.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                homeRam_cpb.setProgress(Float.parseFloat(animation.getAnimatedValue().toString()), totalMemory);
+            }
+        });
         animator1.start();
-        homeRam_cpb.setProgress(usedMemory);
+        homeRam_cpb.setProgress(usedMemory,totalMemory);
 
         //for Storage
         float totalBytes, availableBytes, usedBytes;
@@ -179,4 +208,10 @@ public class HomeFragment extends Fragment {
             batteryRoundCorner_pb.setProgress(bLevel,100);
         }
     };
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+    }
 }

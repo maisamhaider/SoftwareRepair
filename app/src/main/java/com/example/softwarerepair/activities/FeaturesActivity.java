@@ -1,6 +1,7 @@
 package com.example.softwarerepair.activities;
 
 import android.content.Context;
+import android.content.pm.ActivityInfo;
 import android.content.pm.FeatureInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
@@ -22,6 +23,8 @@ public class FeaturesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_features);
+        setRequestedOrientation( ActivityInfo.SCREEN_ORIENTATION_PORTRAIT );
+
         LinearLayout features_LL = findViewById(R.id.features_LL);
         isWifiDirectSupported(this,features_LL);
     }
