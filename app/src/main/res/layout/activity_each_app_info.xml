@@ -45,7 +45,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Open App Setting"
+                android:text="Open App Settings"
                 android:textAlignment="center" />
         </LinearLayout>
 
@@ -264,6 +264,8 @@
             android:layout_marginStart="8dp"
             android:layout_marginBottom="8dp"
             android:text="10"
+            android:maxLines="1"
+            android:maxLength="20"
             android:textColor="@color/colorBlueDark"
             app:layout_constraintBottom_toTopOf="@+id/view10"
             app:layout_constraintEnd_toEndOf="@+id/view10"
