@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
-    tools:context="com.example.softwarerepair.activities.ManageAppsActivity">
+    tools:context="com.phone.repair.phone.cleaner.app_2020.com.phone.repair.phone.cleaner.app_2020.activities.ManageAppsActivity">
 
     <TextView
         android:id="@+id/textView32"

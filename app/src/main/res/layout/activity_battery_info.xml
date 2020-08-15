@@ -8,7 +8,7 @@
     android:paddingStart="15dp"
     android:paddingEnd="15dp"
     android:background="@android:color/white"
-    tools:context=".activities.BatteryInfoActivity">
+    tools:context="com.phone.repair.phone.cleaner.app_2020.activities.BatteryInfoActivity">
 
     <TextView
         android:textStyle="bold"

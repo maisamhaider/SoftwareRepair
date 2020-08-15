@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
-    tools:context=".activities.PhoneCoolerActivity">
+    tools:context="com.phone.repair.phone.cleaner.app_2020.activities.PhoneOptimizerActivity">
 
     <TextView
         android:id="@+id/textView58"
@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="Phone Cooler"
+        android:text="Phone Optimizer"
         android:textColor="@color/colorTextOne"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -103,7 +103,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:gravity="center"
-        android:text="cooling down your phone and reducing CPU usage\n by closing the running apps causing Phone\n Temperature"
+        android:text="Optimizing your phone and reducing CPU usage\n by closing the running apps causing Phone\n Temperature"
         android:textColor="@color/colorTextTwo"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline11"

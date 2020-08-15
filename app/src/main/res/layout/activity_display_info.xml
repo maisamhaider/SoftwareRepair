@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
-    tools:context=".activities.DisplayInfoActivity">
+    tools:context="com.phone.repair.phone.cleaner.app_2020.activities.DisplayInfoActivity">
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:background="@android:color/white"
@@ -715,14 +715,16 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <Button
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
             android:id="@+id/b_display_setting"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
-            android:background="@color/colorPrimary"
+            android:background="@drawable/blue_stroke_button_bg"
             android:text="Display Setting"
-            android:textColor="#fff" />
+            android:textColor="@color/colorTextOne" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 </ScrollView>

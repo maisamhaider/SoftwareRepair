@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.softwarerepair">
+    package="com.phone.repair.phone.cleaner.app_2020">
 
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
@@ -10,7 +10,6 @@
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.NFC" />
-
     <uses-permission
         android:name="android.permission.DELETE_PACKAGES"
         tools:ignore="ProtectedPermissions" />
@@ -22,12 +21,18 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_artboard_main"
         android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@drawable/ic_artboard_main"
         android:supportsRtl="true"
-        android:requestLegacyExternalStorage="true"
-        android:usesCleartextTraffic="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".activities.RepairSystemActivity"/>
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".activities.SplashActivity">
+            <intent-filter>
+               <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activities.RepairSystemActivity" />
         <activity android:name=".activities.InfoStorageAndRamActivity" />
         <activity android:name=".activities.RootCheckerActivity" />
         <activity android:name=".activities.BatteryInfoActivity" />
@@ -38,7 +43,7 @@
         <activity android:name=".activities.ProcessorInfoActivity" />
         <activity android:name=".activities.BluetoothInfoActivity" />
         <activity android:name=".activities.HardwareTestingActivity" />
-        <activity android:name=".activities.PhoneCoolerActivity" />
+        <activity android:name=".activities.PhoneOptimizerActivity" />
         <activity android:name=".activities.BackupAppsActivity" />
         <activity android:name=".activities.EachAppInfo" />
         <activity android:name=".utils.DrawingSimpleAct" />
@@ -46,13 +51,7 @@
         <activity android:name=".activities.ManageAppsActivity" />
         <activity android:name=".activities.EmptyFoldersActivity" />
         <activity android:name=".activities.CacheCleanActivity" />
-        <activity android:name=".activities.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".activities.MainActivity"/>
 
         <provider
             android:name=".utils.MyProvider"
@@ -63,6 +62,14 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/provider_paths" />
         </provider>
+
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="@string/app_id" />
+        <meta-data
+            android:name="com.google.android.gms.ads.AD_MANAGER_APP"
+            android:value="true" />
     </application>
 
 </manifest>

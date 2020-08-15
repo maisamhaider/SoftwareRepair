@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.RepairSystemActivity">
+    tools:context="com.phone.repair.phone.cleaner.app_2020.activities.RepairSystemActivity">
 
 
     <TextView
@@ -47,7 +47,7 @@
 
     <include
         android:id="@+id/repairFinish_view"
-        layout="@layout/ram_booting_finish"
+        layout="@layout/repair_system_finish"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:visibility="gone"

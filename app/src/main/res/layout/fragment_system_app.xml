@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:background="@android:color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".fragments.SystemAppFragment">
+    tools:context="com.phone.repair.phone.cleaner.app_2020.fragments.SystemAppFragment">
     <androidx.cardview.widget.CardView
         app:cardCornerRadius="6dp"
         android:layout_margin="16dp"

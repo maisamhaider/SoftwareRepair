@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:layout_height="match_parent"
     android:background="@android:color/white"
-    tools:context=".activities.InfoStorageAndRamActivity">
+    tools:context="com.phone.repair.phone.cleaner.app_2020.activities.InfoStorageAndRamActivity">
     <TextView
         android:layout_margin="20dp"
         android:textColor="@color/colorTextOne"

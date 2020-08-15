@@ -38,24 +38,30 @@
             android:textStyle="bold" />
     </LinearLayout>
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline23"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.06" />
+
 
     <antonkozyriatskyi.circularprogressindicator.CircularProgressIndicator
         android:id="@+id/batteryRoundCorner_pb"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
+        android:layout_width="115dp"
+        android:layout_height="115dp"
         android:layout_gravity="center"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
         app:direction="clockwise"
         app:dotColor="@color/colorRed"
         app:dotWidth="16dp"
         app:drawDot="true"
         app:enableProgressAnimation="true"
         app:fillBackground="false"
+        app:layout_constraintBottom_toTopOf="@+id/guideline20"
         app:layout_constraintEnd_toStartOf="@+id/storageRoundCorner_pb"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline23"
+        app:layout_constraintTop_toTopOf="@+id/guideline20"
         app:progressBackgroundColor="@color/colorProgressGg"
         app:progressBackgroundStrokeWidth="3dp"
         app:progressCap="round"
@@ -66,21 +72,22 @@
 
     <antonkozyriatskyi.circularprogressindicator.CircularProgressIndicator
         android:id="@+id/storageRoundCorner_pb"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
+        android:layout_width="115dp"
+        android:layout_height="115dp"
         android:layout_gravity="center"
         android:layout_marginStart="10dp"
         app:direction="clockwise"
+        android:layout_marginEnd="5dp"
         app:dotColor="@color/colorRed"
         app:dotWidth="16dp"
         app:drawDot="true"
         app:enableProgressAnimation="true"
         app:fillBackground="false"
-        app:layout_constraintBottom_toBottomOf="@+id/batteryRoundCorner_pb"
-        app:layout_constraintEnd_toStartOf="@+id/linearLayout"
+        app:layout_constraintBottom_toTopOf="@+id/guideline20"
+        app:layout_constraintEnd_toStartOf="@+id/guideline19"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/batteryRoundCorner_pb"
-        app:layout_constraintTop_toTopOf="@+id/batteryRoundCorner_pb"
+        app:layout_constraintTop_toTopOf="@+id/guideline20"
         app:progressBackgroundColor="@color/colorProgressGg"
         app:progressBackgroundStrokeWidth="3dp"
         app:progressCap="round"
@@ -95,7 +102,7 @@
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_marginTop="16dp"
-        android:background="@drawable/blue_stroke_blue_stroke_button_bg"
+        android:background="@drawable/blue_stroke_button_bg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -116,90 +123,101 @@
         app:layout_constraintTop_toTopOf="@+id/homeBatteryIntent_view"
         tools:ignore="SmallSp" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
+    <View
+        android:layout_marginStart="10dp"
+        android:id="@+id/view9"
+        android:layout_width="8dp"
+        android:layout_height="8dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/circle_blue_light_bg"
+        app:layout_constraintBottom_toBottomOf="@+id/homeTotalStorageSize_tv"
+        app:layout_constraintEnd_toStartOf="@+id/homeTotalStorageSize_tv"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@+id/guideline19"
+        app:layout_constraintTop_toTopOf="@+id/homeTotalStorageSize_tv" />
+
+
+    <TextView
+        android:id="@+id/homeTotalStorageSize_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="214 GB"
+        android:textColor="@color/colorTextTwo"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/view9"
+        app:layout_constraintTop_toTopOf="@+id/storageRoundCorner_pb" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline19"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.7" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline20"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.3" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total"
+        android:textColor="@color/colorTextThree"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline20"
+        app:layout_constraintEnd_toEndOf="@+id/homeTotalStorageSize_tv"
+        app:layout_constraintStart_toEndOf="@+id/view9"
+        app:layout_constraintTop_toBottomOf="@+id/homeTotalStorageSize_tv" />
+
+    <View
+        android:id="@+id/view26"
+        android:layout_width="8dp"
+        android:layout_height="8dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/circle_blue_light_bg"
+        app:layout_constraintBottom_toTopOf="@+id/textView10"
+        app:layout_constraintEnd_toStartOf="@+id/homeStorageFreeSize_tv"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@+id/guideline19"
+        app:layout_constraintTop_toTopOf="@+id/guideline20" />
+
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:id="@+id/homeStorageFreeSize_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="@+id/storageRoundCorner_pb"
+        android:text="214 GB"
+        android:textColor="@color/colorTextTwo"
+        android:textSize="15sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/storageRoundCorner_pb"
-        app:layout_constraintTop_toTopOf="@+id/storageRoundCorner_pb">
+        app:layout_constraintStart_toEndOf="@+id/view26"
+        app:layout_constraintTop_toTopOf="@+id/guideline20" />
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <View
-                android:id="@+id/view9"
-                android:layout_width="8dp"
-                android:layout_height="8dp"
-                android:layout_marginEnd="5dp"
-                android:background="@drawable/circle_blue_light_bg" />
-
-            <TextView
-                android:id="@+id/homeTotalStorageSize_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="214 GB"
-                android:textColor="@color/colorTextTwo"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                app:layout_constraintTop_toTopOf="@+id/storageRoundCorner_pb"
-                tools:layout_editor_absoluteX="363dp" />
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Free"
+        android:textColor="@color/colorTextThree"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/homeStorageFreeSize_tv"
+        app:layout_constraintStart_toEndOf="@+id/view26"
+        app:layout_constraintTop_toBottomOf="@+id/homeStorageFreeSize_tv" />
 
 
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/textView9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Total"
-            android:textColor="@color/colorTextThree"
-            android:textSize="12sp" />
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <View
-                android:layout_width="8dp"
-                android:layout_height="8dp"
-                android:layout_marginEnd="5dp"
-                android:background="@drawable/circle_blue_light_bg" />
-
-            <TextView
-                android:id="@+id/homeStorageFreeSize_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="214 GB"
-                android:textColor="@color/colorTextTwo"
-                android:textSize="15sp"
-                android:textStyle="bold" />
-
-        </LinearLayout>
-
-
-        <TextView
-            android:id="@+id/textView10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Free"
-            android:textColor="@color/colorTextThree"
-            android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="@+id/homeStorageFreeSize_tv"
-            app:layout_constraintStart_toStartOf="@+id/homeStorageFreeSize_tv"
-            app:layout_constraintTop_toBottomOf="@+id/homeStorageFreeSize_tv" />
-
-    </LinearLayout>
 
 
     <View
@@ -207,7 +225,7 @@
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_marginTop="20dp"
-        android:background="@drawable/blue_stroke_blue_stroke_button_bg"
+        android:background="@drawable/blue_stroke_button_bg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"

@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:layout_height="match_parent"
     android:background="@android:color/white"
-    tools:context=".fragments.InstalledFragment">
+    tools:context="com.phone.repair.phone.cleaner.app_2020.fragments.InstalledFragment">
 
 
     <androidx.cardview.widget.CardView
