@@ -23,7 +23,7 @@ import com.phone.repair.phone.cleaner.app_2020.utils.TimeUtil;
 public class EachAppInfo extends AppCompatActivity {
 
     private String pkgName;
-
+    private boolean sysApp = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +45,7 @@ public class EachAppInfo extends AppCompatActivity {
         TimeUtil timeUtil = new TimeUtil();
         MathCalculationsUtil mathCalculationsUtil = new MathCalculationsUtil();
         pkgName = getIntent().getStringExtra("pkg");
+        sysApp = getIntent().getBooleanExtra("sysApp",false);
 
         String appVersion = applicationUtility.getAppInformation(pkgName, StringsAnnotations.APP_VERSION);
         String appName = applicationUtility.getAppName(pkgName);
@@ -59,25 +60,29 @@ public class EachAppInfo extends AppCompatActivity {
         tvUpdateTime.setText(appLastUpdateTime);
         ivAppIcon.setImageDrawable(iconDrawable);
 
+
         try {
             String appSize = mathCalculationsUtil.getCalculatedDataSizeWithPrefix((float) applicationUtility.getAppSize(pkgName));
             tvSize.setText(appSize);
-            Toast.makeText(this, "check", Toast.LENGTH_SHORT).show();
-        } catch (PackageManager.NameNotFoundException e) {
+         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }
         llOpenApp.setOnClickListener(view -> {
             Intent launchIntent = getPackageManager().getLaunchIntentForPackage(pkgName);
             startActivity( launchIntent );
         });
-        llCheckOnStore.setOnClickListener(view -> startActivity(new
-
-                        Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + pkgName))));
+        llCheckOnStore.setOnClickListener(view -> {
+            if (sysApp)
+            {
+                Toast.makeText(this, "Play Store doesn't contain system apps", Toast.LENGTH_SHORT).show();
+            }
+            else{
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + pkgName)));}
+        });
         llOpenSetting.setOnClickListener(view -> {
             Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
             intent.setData(Uri.parse("package:"+pkgName));
             startActivity(intent);
-
         });
 
 

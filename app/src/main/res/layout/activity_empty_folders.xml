@@ -20,29 +20,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <antonkozyriatskyi.circularprogressindicator.CircularProgressIndicator
+    <com.mikhaellopez.circularprogressbar.CircularProgressBar
         android:id="@+id/deleteEmptyFolders_cpb"
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_gravity="center"
-        app:direction="clockwise"
-        app:dotColor="@color/colorRed"
-        app:dotWidth="16dp"
-        app:drawDot="true"
-        app:enableProgressAnimation="true"
-        app:fillBackground="false"
+        app:cpb_background_progressbar_color="@color/colorProgressGg"
+        app:cpb_background_progressbar_width="4dp"
+        app:cpb_progress_direction="to_right"
+        app:cpb_progressbar_color="@color/colorRed"
+        app:cpb_round_border="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:progressBackgroundColor="@color/colorProgressGg"
-        app:progressBackgroundStrokeWidth="4dp"
-        app:progressCap="round"
-        app:progressColor="@color/colorRed"
-        app:progressStrokeWidth="4dp"
-        app:startAngle="280"
-        app:textColor="@color/colorTextOne" />
+        app:cpb_progressbar_width="4dp" />
+
 
     <TextView
         android:id="@+id/cleanSuccessfully_tv"
@@ -58,13 +52,24 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/counting_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorTextOne"
+         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/emptyFolders_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Removing Empty Folder"
+        android:text="Removing Empty Folders"
         android:textColor="@color/colorTextTwo"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/deleteEmptyFolders_cpb"

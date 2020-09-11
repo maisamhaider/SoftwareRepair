@@ -50,94 +50,94 @@ public class FeaturesActivity extends AppCompatActivity {
         }
 
         if (fArrayList.contains("android.hardware.wifi.direct")) {
-            addViewToLayout("wifi direct",features_LL, StringsAnnotations.AVAILABLE);
+            addViewToLayout("WiFi Direct",features_LL, StringsAnnotations.AVAILABLE);
 
         } else {
-            addViewToLayout("wifi direct",features_LL, StringsAnnotations.NOT_AVAILABLE);
+            addViewToLayout("WiFi Direct",features_LL, StringsAnnotations.NOT_AVAILABLE);
 
         }
         if (fArrayList.contains("android.hardware.bluetooth")) {
-             addViewToLayout("bluetooth",features_LL, StringsAnnotations.AVAILABLE);
+             addViewToLayout("Bluetooth",features_LL, StringsAnnotations.AVAILABLE);
 
         } else {
-            addViewToLayout("bluetooth",features_LL, StringsAnnotations.NOT_AVAILABLE);
+            addViewToLayout("Bluetooth",features_LL, StringsAnnotations.NOT_AVAILABLE);
 
         }
         if (fArrayList.contains("android.hardware.microphone")) {
-             addViewToLayout("microphone",features_LL, StringsAnnotations.AVAILABLE);
+             addViewToLayout("Microphone",features_LL, StringsAnnotations.AVAILABLE);
 
         } else {
-            addViewToLayout("microphone",features_LL, StringsAnnotations.NOT_AVAILABLE);
+            addViewToLayout("Microphone",features_LL, StringsAnnotations.NOT_AVAILABLE);
         }
         if (fArrayList.contains("android.hardware.camera.flash")) {
-             addViewToLayout("camera flash",features_LL, StringsAnnotations.AVAILABLE);
+             addViewToLayout("Camera Flash",features_LL, StringsAnnotations.AVAILABLE);
 
         } else {
-            addViewToLayout("camera flash",features_LL, StringsAnnotations.NOT_AVAILABLE);
+            addViewToLayout("Camera Flash",features_LL, StringsAnnotations.NOT_AVAILABLE);
         }
         if (fArrayList.contains("android.hardware.camera.front")) {
-             addViewToLayout("camera front",features_LL, StringsAnnotations.AVAILABLE);
+             addViewToLayout("Camera Front",features_LL, StringsAnnotations.AVAILABLE);
 
         } else {
-            addViewToLayout("camera front",features_LL, StringsAnnotations.NOT_AVAILABLE);
+            addViewToLayout("Camera Front",features_LL, StringsAnnotations.NOT_AVAILABLE);
         }
         if (fArrayList.contains("android.hardware.touchscreen.multitouch.distinct")) {
-             addViewToLayout("multitouch.distinct",features_LL, StringsAnnotations.AVAILABLE);
+             addViewToLayout("Multitouch Distinct",features_LL, StringsAnnotations.AVAILABLE);
 
         } else {
-            addViewToLayout("multitouch.distinct",features_LL, StringsAnnotations.NOT_AVAILABLE);
+            addViewToLayout("Multitouch Distinct",features_LL, StringsAnnotations.NOT_AVAILABLE);
         }
         if (fArrayList.contains("android.hardware.nfc")) {
-             addViewToLayout("nfc",features_LL, StringsAnnotations.AVAILABLE);
+             addViewToLayout("NFC",features_LL, StringsAnnotations.AVAILABLE);
 
         } else {
-            addViewToLayout("nfc",features_LL, StringsAnnotations.NOT_AVAILABLE);
+            addViewToLayout("NFC",features_LL, StringsAnnotations.NOT_AVAILABLE);
         }
         if (fArrayList.contains("android.hardware.bluetooth_le")) {
-             addViewToLayout("bluetooth_le",features_LL, StringsAnnotations.AVAILABLE);
+             addViewToLayout("Bluetooth LE",features_LL, StringsAnnotations.AVAILABLE);
         } else {
-            addViewToLayout("bluetooth_le",features_LL, StringsAnnotations.NOT_AVAILABLE);
+            addViewToLayout("Bluetooth LE",features_LL, StringsAnnotations.NOT_AVAILABLE);
         }
         if (fArrayList.contains("android.software.print")) {
-             addViewToLayout("printing",features_LL, StringsAnnotations.AVAILABLE);
+             addViewToLayout("Printing",features_LL, StringsAnnotations.AVAILABLE);
 
         } else {
-            addViewToLayout("printing",features_LL, StringsAnnotations.NOT_AVAILABLE);
+            addViewToLayout("Printing",features_LL, StringsAnnotations.NOT_AVAILABLE);
         }
         if (fArrayList.contains("android.hardware.telephony.gsm")) {
-             addViewToLayout("gsm",features_LL, StringsAnnotations.AVAILABLE);
+             addViewToLayout("GSM",features_LL, StringsAnnotations.AVAILABLE);
         } else {
             addViewToLayout("gsm",features_LL, StringsAnnotations.NOT_AVAILABLE);
         }
         if (fArrayList.contains("android.hardware.fingerprint")) {
-             addViewToLayout("fingerprint",features_LL, StringsAnnotations.AVAILABLE);
+             addViewToLayout("Fingerprint",features_LL, StringsAnnotations.AVAILABLE);
 
         } else {
-            addViewToLayout("fingerprint",features_LL, StringsAnnotations.NOT_AVAILABLE);
+            addViewToLayout("Fingerprint",features_LL, StringsAnnotations.NOT_AVAILABLE);
         }
         if (fArrayList.contains("android.hardware.consumerir")) {
-             addViewToLayout("consumer ip",features_LL, StringsAnnotations.AVAILABLE);
+             addViewToLayout("Consumer Ip",features_LL, StringsAnnotations.AVAILABLE);
 
         } else {
-            addViewToLayout("consumer ip",features_LL, StringsAnnotations.NOT_AVAILABLE);
+            addViewToLayout("Consumer Ip",features_LL, StringsAnnotations.NOT_AVAILABLE);
         }
         if (fArrayList.contains("android.software.app_widgets")) {
-             addViewToLayout("app_widgets",features_LL, StringsAnnotations.AVAILABLE);
+             addViewToLayout("App Widgets",features_LL, StringsAnnotations.AVAILABLE);
 
         } else {
-            addViewToLayout("app_widgets",features_LL, StringsAnnotations.NOT_AVAILABLE);
+            addViewToLayout("App Widgets",features_LL, StringsAnnotations.NOT_AVAILABLE);
         }
         if (fArrayList.contains("android.software.sip")) {
-             addViewToLayout("sip",features_LL, StringsAnnotations.AVAILABLE);
+             addViewToLayout("SIP",features_LL, StringsAnnotations.AVAILABLE);
 
         } else {
-            addViewToLayout("sip",features_LL, StringsAnnotations.NOT_AVAILABLE);
+            addViewToLayout("SIP",features_LL, StringsAnnotations.NOT_AVAILABLE);
         }
         if (fArrayList.contains("android.software.sip.voip")) {
-             addViewToLayout("sip.voip",features_LL, StringsAnnotations.AVAILABLE);
+             addViewToLayout("SIP VOIP",features_LL, StringsAnnotations.AVAILABLE);
 
         } else {
-            addViewToLayout("sip.voip",features_LL, StringsAnnotations.NOT_AVAILABLE);
+            addViewToLayout("SIP.VOIP",features_LL, StringsAnnotations.NOT_AVAILABLE);
         }
     }
 }

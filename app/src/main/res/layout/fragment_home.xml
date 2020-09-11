@@ -4,35 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:orientation="vertical"
-    android:padding="20dp"
+    android:padding="15dp"
     android:background="@android:color/white"
     android:layout_height="match_parent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:background="@android:color/white"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:id="@+id/textView60"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/app_name"
-            android:textColor="@color/colorTextOne"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:src="@drawable/ic_baseline_menu"
-            android:id="@+id/homeMenu_iv"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 
@@ -63,7 +38,9 @@
                 android:text="Storage &amp; Battery Information"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
-            <include layout="@layout/home_frag_storage_and_battery_info_xml"/>
+
+            <include layout="@layout/home_frag_storage_and_battery_info_xml" />
+
             <TextView
                 android:textColor="@color/colorTextTwo"
                 android:textStyle="bold"

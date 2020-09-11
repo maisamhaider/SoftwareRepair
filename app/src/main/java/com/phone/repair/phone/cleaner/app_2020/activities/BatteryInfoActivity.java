@@ -6,17 +6,15 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.ActivityInfo;
 import android.os.BatteryManager;
-import android.os.Build;
 import android.os.Bundle;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.mikhaellopez.circularprogressbar.CircularProgressBar;
 import com.phone.repair.phone.cleaner.app_2020.R;
 import com.phone.repair.phone.cleaner.app_2020.utils.MathCalculationsUtil;
-import com.mikhaellopez.circularprogressbar.CircularProgressBar;
 import com.skydoves.progressview.ProgressView;
-import com.skydoves.progressview.ProgressViewOrientation;
 
 import github.nisrulz.easydeviceinfo.base.EasyBatteryMod;
 
@@ -42,11 +40,11 @@ public class BatteryInfoActivity extends AppCompatActivity {
         bStatus_tv = findViewById(R.id.bStatus_tv);
         circularProgressBar = findViewById(R.id.circularProgressBar);
         progressView1 = findViewById(R.id.progressView1);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            progressView1.setOrientation(ProgressViewOrientation.VERTICAL);
-        } else {
-            progressView1.setOrientation(ProgressViewOrientation.HORIZONTAL);
-        }
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+//            progressView1.setOrientation(ProgressViewOrientation.VERTICAL);
+//        } else {
+//            progressView1.setOrientation(ProgressViewOrientation.HORIZONTAL);
+//        }
         circularProgressBar.setProgressMax(100f);
         circularProgressBar.setProgressDirection(CircularProgressBar.ProgressDirection.TO_RIGHT);
         circularProgressBar.setProgressBarWidth(8f); // in DP

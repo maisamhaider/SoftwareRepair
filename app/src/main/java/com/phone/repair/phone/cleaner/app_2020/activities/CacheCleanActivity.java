@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -28,12 +29,13 @@ public class CacheCleanActivity extends AppCompatActivity {
     String path;
     MyPermissions permissions;
     CircularProgressIndicator cacheCircularProgressBar;
+    float totalSizeFloat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cache_clean_activty);
-        setRequestedOrientation( ActivityInfo.SCREEN_ORIENTATION_PORTRAIT );
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         storageUtility = new StorageUtility();
         mathCalculationsUtil = new MathCalculationsUtil();
@@ -52,12 +54,19 @@ public class CacheCleanActivity extends AppCompatActivity {
 
         path = Environment.getExternalStorageDirectory().getAbsolutePath();
 
+
         cleanCache_tv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (permissions.permission()) {
-                    CacheClean cacheClean = new CacheClean();
-                    cacheClean.execute();
+
+                    if (totalSizeFloat !=(float) 0) {
+                        CacheClean cacheClean = new CacheClean();
+                        cacheClean.execute();
+                    } else {
+                        Toast.makeText(CacheCleanActivity.this, "No cache available", Toast.LENGTH_SHORT).show();
+                    }
+
                 }
             }
         });
@@ -95,27 +104,43 @@ public class CacheCleanActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
-            float totalSizeFloat = storageUtility.getLogFileSize(path)
-                    + storageUtility.getTempFileSize(path) + storageUtility.getCachesSize(path) + storageUtility.getApkFileSize(path);
-            String logFileSize = mathCalculationsUtil.getCalculatedDataSizeWithPrefix(storageUtility.getLogFileSize(path));
-            String tempFileSize = mathCalculationsUtil.getCalculatedDataSizeWithPrefix(storageUtility.getTempFileSize(path));
-            String cacheFileSize = mathCalculationsUtil.getCalculatedDataSizeWithPrefix(storageUtility.getCachesSize(path));
-            String apkFileSize = mathCalculationsUtil.getCalculatedDataSizeWithPrefix(storageUtility.getApkFileSize(path));
-            String totalSizeString = mathCalculationsUtil.getCalculatedDataSizeWithPrefix(totalSizeFloat);
 
-            totalCacheSize_tv1.setText(totalSizeString);
-            unInstalledSize_tv.setText(apkFileSize);
-            tempFiles_tv.setText(tempFileSize);
-            logFiles_tv.setText(logFileSize);
-            cacheFile_tv.setText(cacheFileSize);
-            setScanningTvData(totalSizeString + " Cleaned");
+//                float apksSize = storageUtility.getApkFileSize(path);
+//                float tmSize  = storageUtility.getTempFileSize(path)  ;
+//                float logSize  = storageUtility.getLogFileSize(path)  ;
+//                float cacheSize  = storageUtility.getCachesSize(path)  ;
+//
+//            float totalSizeFloat = apksSize+tmSize+logSize+cacheSize;
+
+//            String logFileSize = mathCalculationsUtil.getCalculatedDataSizeWithPrefix(logSize);
+//            String tempFileSize = mathCalculationsUtil.getCalculatedDataSizeWithPrefix(tmSize);
+//            String cacheFileSize = mathCalculationsUtil.getCalculatedDataSizeWithPrefix(cacheSize);
+//            String apkFileSize = mathCalculationsUtil.getCalculatedDataSizeWithPrefix(apksSize);
+//            String totalSizeString = mathCalculationsUtil.getCalculatedDataSizeWithPrefix(totalSizeFloat);
+
+//            totalCacheSize_tv1.setText("0KB");
+//            unInstalledSize_tv.setText(apkFileSize);
+//            tempFiles_tv.setText(tempFileSize);
+//            logFiles_tv.setText(logFileSize);
+//            cacheFile_tv.setText(cacheFileSize);
+//            setScanningTvData(totalSizeString + " Cleaned");
+//
+            totalCacheSize_tv1.setText("0KB");
+            unInstalledSize_tv.setText("0KB");
+            tempFiles_tv.setText("0KB");
+            logFiles_tv.setText("0KB");
+            cacheFile_tv.setText("0KB");
+            setScanningTvData(mathCalculationsUtil.getCalculatedDataSizeWithPrefix(totalSizeFloat) + " Cleaned");
             cacheCircularProgressBar.setProgress(totalSizeFloat, storageUtility.getTotalStorage());
             iosDialog.dismiss();
+            cleanCache_tv.setTextColor(getResources().getColor(R.color.colorTextThree));
+            cleanCache_tv.setEnabled(false);
         }
     }
 
     class SearchCache extends AsyncTask<Void, Integer, String> {
-        IosDialog  iosDialog = new IosDialog(CacheCleanActivity.this, "Cleaning");
+        IosDialog iosDialog = new IosDialog(CacheCleanActivity.this, "Cleaning");
+
         @Override
         protected String doInBackground(Void... voids) {
             getAllUnUsableFile(path);
@@ -126,16 +151,21 @@ public class CacheCleanActivity extends AppCompatActivity {
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
             iosDialog.show();
-            float totalSizeFloat = storageUtility.getLogFileSize(path)
-                    + storageUtility.getTempFileSize(path)
-                    + storageUtility.getCachesSize(path)
-                    + storageUtility.getApkFileSize(path);
 
-            String logFileSize = mathCalculationsUtil.getCalculatedDataSizeWithPrefix(storageUtility.getLogFileSize(path));
-            String tempFileSize = mathCalculationsUtil.getCalculatedDataSizeWithPrefix(storageUtility.getTempFileSize(path));
-            String cacheFileSize = mathCalculationsUtil.getCalculatedDataSizeWithPrefix(storageUtility.getCachesSize(path));
-            String apkFileSize = mathCalculationsUtil.getCalculatedDataSizeWithPrefix(storageUtility.getApkFileSize(path));
+
+
+              float apksSize = storageUtility.getApkFileSize(path) ;
+              float tmSize  = storageUtility.getTempFileSize(path)  ;
+              float logSize  = storageUtility.getLogFileSize(path)  ;
+              float cacheSize  = storageUtility.getCachesSize(path)  ;
+
+            totalSizeFloat =  apksSize+tmSize+logSize+cacheSize;
+            String logFileSize = mathCalculationsUtil.getCalculatedDataSizeWithPrefix(logSize);
+            String tempFileSize = mathCalculationsUtil.getCalculatedDataSizeWithPrefix(tmSize);
+            String apkFileSize = mathCalculationsUtil.getCalculatedDataSizeWithPrefix(apksSize);
+            String cacheFileSize = mathCalculationsUtil.getCalculatedDataSizeWithPrefix(cacheSize);
             String totalSizeString = mathCalculationsUtil.getCalculatedDataSizeWithPrefix(totalSizeFloat);
+
             totalCacheSize_tv1.setText(totalSizeString);
             unInstalledSize_tv.setText(apkFileSize);
             tempFiles_tv.setText(tempFileSize);

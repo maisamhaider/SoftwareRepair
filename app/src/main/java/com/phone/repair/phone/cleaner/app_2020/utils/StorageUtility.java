@@ -1,6 +1,7 @@
 package com.phone.repair.phone.cleaner.app_2020.utils;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Environment;
 import android.os.StatFs;
 
@@ -18,10 +19,18 @@ import java.util.Objects;
 
 public class StorageUtility {
 
+    Context context;
+     SharedPreferences.Editor editor;
     public StorageUtility() {
     }
 
     int result = 0;
+    long size1 = 0;
+    long size2 = 0;
+    long size3 = 0;
+    long size4 = 0;
+    long size5 = 0;
+    boolean isEmpty = false;
 
     public long deleteAllEmptyFolder(String dir) {
 
@@ -44,47 +53,25 @@ public class StorageUtility {
         }
         return totalSize;
     }
-
-    public boolean isSDCard() {
-
-        boolean isSdCard = false;
-
-        boolean isSDPresent = Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED);
-
-        if (isSDPresent) {
-            // yes SD-card is present
-            isSdCard = true;
-        }
-        return isSdCard;
-    }
-
-
-    public void deleteCache(Context context) {
-        try {
-            File dir = context.getCacheDir();
-            deleteDir(dir);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    public boolean deleteDir(File dir) {
-        if (dir != null && dir.isDirectory()) {
-            String[] children = dir.list();
-            if (children != null) {
-                for (String child : children) {
-                    boolean success = deleteDir(new File(dir, child));
-                    if (!success) {
-                        return false;
+    public boolean isEmptyFolder(File dir) {
+        if (dir.isDirectory()) {
+            File[] files = dir.listFiles();
+            if (files != null) {
+                for (File f : files) {
+                    if (f.isDirectory()) {
+                        String[] file = f.list();
+                        if (file != null) {
+                            if (file.length == 0) {
+                                isEmpty = true;
+                            } else {
+                                getAllEmptyFolders(f.getAbsoluteFile());
+                            }
+                        }
                     }
                 }
             }
-            return dir.delete();
-        } else if (dir != null && dir.isFile()) {
-            return dir.delete();
-        } else {
-            return false;
         }
+        return isEmpty;
     }
 
     public float getTotalStorage() {
@@ -110,7 +97,6 @@ public class StorageUtility {
 
 
     public int getAllEmptyFolders(File current) {
-
         if (current.isDirectory()) {
 
             File[] files = current.listFiles();
@@ -197,8 +183,7 @@ public class StorageUtility {
 
 
     public long getLogFileSize(String path) {
-        long size = 0;
-        File fold = new File(path);
+         File fold = new File(path);
         File[] mlist = fold.listFiles();
         File[] mFilelist = fold.listFiles(new AllLogFilter());
         if (mlist != null) {
@@ -210,15 +195,14 @@ public class StorageUtility {
         }
         if (mFilelist != null) {
             for (File f : mFilelist) {
-                size = size + f.length();
+                size1 = size1 + f.length();
             }
         }
-        return size;
+        return size1;
     }
 
     public long getTempFileSize(String path) {
-        long size = 0;
-        File fold = new File(path);
+         File fold = new File(path);
         File[] mlist = fold.listFiles();
         File[] mFilelist = fold.listFiles(new AllTempFilter());
         if (mlist != null) {
@@ -230,12 +214,12 @@ public class StorageUtility {
         }
         if (mFilelist != null) {
             for (File f : mFilelist) {
-                size = size + f.length();
+                size2 = size2 + f.length();
             }
         }
-        return size;
+        return size2;
     } public long getApkFileSize(String path) {
-        long size = 0;
+
         File fold = new File(path);
         File[] mlist = fold.listFiles();
         File[] mFilelist = fold.listFiles(new AllApkFilter());
@@ -248,14 +232,14 @@ public class StorageUtility {
         }
         if (mFilelist != null) {
             for (File f : mFilelist) {
-                size = size + f.length();
+                size3 = size3 + f.length();
             }
         }
-        return size;
+        return size3;
     }
 
     public long getCachesSize(String path) {
-        long size = 0;
+
         File fold = new File(path);
         File[] mlist = fold.listFiles();
         File[] mFilelist = fold.listFiles(new AllCacheFilter());
@@ -268,14 +252,13 @@ public class StorageUtility {
         }
         if (mFilelist != null) {
             for (File f : mFilelist) {
-                size = size + f.length();
+                size4 = size4 + f.length();
             }
         }
-        return size;
+        return size4;
     }
     public long getAllUnUsableSize(String path) {
-        long size = 0;
-        File fold = new File(path);
+         File fold = new File(path);
         File[] mlist = fold.listFiles();
         File[] mFilelist = fold.listFiles(new AllUnUsableFilter());
         if (mlist != null) {
@@ -287,10 +270,10 @@ public class StorageUtility {
         }
         if (mFilelist != null) {
             for (File f : mFilelist) {
-                size = size + f.length();
+                size5 = size5 + f.length();
             }
         }
-        return size;
+        return size5;
     }
 
 

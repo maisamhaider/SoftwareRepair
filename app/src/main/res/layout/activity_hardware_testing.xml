@@ -162,7 +162,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/speakerTest_linearLayout"
             android:layout_width="0dp"
-            android:layout_height="100dp"
+            android:layout_height="110dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
             android:layout_weight="1"
@@ -197,7 +197,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/checkHeadPhone_linearLayout"
             android:layout_width="0dp"
-            android:layout_height="100dp"
+            android:layout_height="110dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:layout_weight="1"

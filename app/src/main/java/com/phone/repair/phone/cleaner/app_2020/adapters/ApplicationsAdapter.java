@@ -118,6 +118,8 @@ public class ApplicationsAdapter extends RecyclerView.Adapter<ApplicationsAdapte
             public void onClick(View v) {
                 Intent intent = new Intent(context, EachAppInfo.class);
                 intent.putExtra("pkg", appPackage);
+                if (isSystemApp)
+                {intent.putExtra("sysApp", true);}
                 context.startActivity(intent);
 
 //                if (context instanceof BaseFrag)

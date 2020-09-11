@@ -50,7 +50,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:gravity="center"
-        android:text="Use the all to increase the performance of device and make it fast"
+        android:text="Used to increase the performance of the device to make it fast"
         android:textColor="#EAF0FA"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

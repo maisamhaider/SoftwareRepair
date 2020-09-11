@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="@+id/batteryRoundCorner_pb">
 
         <TextView
-            android:id="@+id/batteryProgressBarPercent_tv"
+             android:id="@+id/batteryProgressBarPercent_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="50%"
@@ -28,27 +28,20 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/textView4"
+             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="BATTERY USAGE "
+            android:text="BATTERY STATE "
             android:textColor="@color/colorTextThree"
             android:textSize="10sp"
             android:textStyle="bold" />
     </LinearLayout>
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline23"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.06" />
-
 
     <antonkozyriatskyi.circularprogressindicator.CircularProgressIndicator
         android:id="@+id/batteryRoundCorner_pb"
-        android:layout_width="115dp"
+        android:layout_width="110dp"
         android:layout_height="115dp"
         android:layout_gravity="center"
         app:direction="clockwise"
@@ -60,7 +53,7 @@
         app:layout_constraintBottom_toTopOf="@+id/guideline20"
         app:layout_constraintEnd_toStartOf="@+id/storageRoundCorner_pb"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/guideline23"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline20"
         app:progressBackgroundColor="@color/colorProgressGg"
         app:progressBackgroundStrokeWidth="3dp"
@@ -70,14 +63,14 @@
         app:startAngle="280"
         app:textColor="@android:color/transparent" />
 
+
     <antonkozyriatskyi.circularprogressindicator.CircularProgressIndicator
         android:id="@+id/storageRoundCorner_pb"
-        android:layout_width="115dp"
+        android:layout_width="110dp"
         android:layout_height="115dp"
         android:layout_gravity="center"
-        android:layout_marginStart="10dp"
-        app:direction="clockwise"
         android:layout_marginEnd="5dp"
+        app:direction="clockwise"
         app:dotColor="@color/colorRed"
         app:dotWidth="16dp"
         app:drawDot="true"
@@ -85,8 +78,6 @@
         app:fillBackground="false"
         app:layout_constraintBottom_toTopOf="@+id/guideline20"
         app:layout_constraintEnd_toStartOf="@+id/guideline19"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/batteryRoundCorner_pb"
         app:layout_constraintTop_toTopOf="@+id/guideline20"
         app:progressBackgroundColor="@color/colorProgressGg"
         app:progressBackgroundStrokeWidth="3dp"
@@ -95,7 +86,6 @@
         app:progressStrokeWidth="3dp"
         app:startAngle="280"
         app:textColor="@android:color/transparent" />
-
 
     <View
         android:id="@+id/homeBatteryIntent_view"
@@ -259,7 +249,7 @@
         app:layout_constraintTop_toTopOf="@+id/storageRoundCorner_pb">
 
         <TextView
-            android:id="@+id/storageProgressBarPercent_tv"
+             android:id="@+id/storageProgressBarPercent_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="50%"
@@ -268,7 +258,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:layout_width="wrap_content"
+             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:text="STORAGE USAGE "

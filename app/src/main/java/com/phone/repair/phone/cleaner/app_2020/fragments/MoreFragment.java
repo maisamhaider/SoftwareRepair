@@ -1,7 +1,9 @@
 package com.phone.repair.phone.cleaner.app_2020.fragments;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.view.LayoutInflater;
@@ -33,12 +35,24 @@ public class MoreFragment extends BaseFrag {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_more, container, false);
         adView(view.findViewById(R.id.adView1));
+        String manufacture = Build.MANUFACTURER;
         view.findViewById(R.id.moreBatteryUsage_cl).setOnClickListener(v -> {
-            Intent intent = new Intent(Intent.ACTION_POWER_USAGE_SUMMARY);
-            ResolveInfo resolveInfo = getActivity().getPackageManager().resolveActivity(intent, 0);
-             if (resolveInfo != null) {
-                startActivity(intent);
+
+            if (manufacture.toLowerCase().matches("huawei"))
+            {Intent intent = new Intent(Intent.ACTION_POWER_USAGE_SUMMARY);
+                ResolveInfo resolveInfo = getActivity().getPackageManager().resolveActivity(intent, 0);
+                if (resolveInfo != null) {
+                    startActivity(intent);
+                }
             }
+            else
+            { Intent intent = new Intent(Intent.ACTION_POWER_USAGE_SUMMARY);
+                ResolveInfo resolveInfo = getActivity().getPackageManager().resolveActivity(intent, 0);
+                if (resolveInfo != null) {
+                    startActivity(intent);
+                }
+            }
+
         });
         view.findViewById(R.id.moreDisplaySettings_cl).setOnClickListener(v -> {
             Intent intent = new Intent(Settings.ACTION_DISPLAY_SETTINGS);
@@ -49,17 +63,41 @@ public class MoreFragment extends BaseFrag {
         });
         view.findViewById(R.id.moreSaveBattery_cl).setOnClickListener(v -> {
             Intent intent = null;
-            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP_MR1) {
-                intent = new Intent(Settings.ACTION_BATTERY_SAVER_SETTINGS);
+
+
+            if (Build.MANUFACTURER.toLowerCase().matches("samsung")) {
+
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP_MR1) {
+                    intent = new Intent(Settings.ACTION_BATTERY_SAVER_SETTINGS);
+                    ResolveInfo resolveInfo = getActivity().getPackageManager().resolveActivity(intent, 0);
+                    if (resolveInfo != null) {
+                        startActivity(intent);
+                    } else {
+                        Toast.makeText(getActivity(), "your device doesn't support this power saver", Toast.LENGTH_SHORT).show();
+                    }
+                }else {
+                    Toast.makeText(getActivity(), "your device doesn't support this power saver", Toast.LENGTH_SHORT).show();
+                }
+            } else {
+
+                if (Build.MANUFACTURER.toLowerCase().matches("huawei"))
+                {
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
+                    {
+                        Toast.makeText(mContext, "Device does not support this feature", Toast.LENGTH_SHORT).show();
+                    }
+                    else
+                    {
+                        startActivity(new Intent(Settings.ACTION_BATTERY_SAVER_SETTINGS));
+                    }
+                }
+
+
             }
-            ResolveInfo resolveInfo = getActivity().getPackageManager().resolveActivity(intent, 0);
-             if (resolveInfo != null) {
-                startActivity(intent);
-            }
-             else {
-                 Toast.makeText(getActivity(), "your device doesn't support this power saver", Toast.LENGTH_SHORT).show();
-             }
-        });
+
+
+
+    });
 
         view.findViewById(R.id.moreStorageSettings_cl).setOnClickListener(v -> {
             Intent intent = new Intent(Settings.ACTION_INTERNAL_STORAGE_SETTINGS);
@@ -125,11 +163,20 @@ public class MoreFragment extends BaseFrag {
         });
 
         view.findViewById(R.id.moreNfsAndPayment_cl).setOnClickListener(v -> {
-            Intent intent = new Intent(Settings.ACTION_NFC_SETTINGS);
-            ResolveInfo resolveInfo = getActivity().getPackageManager().resolveActivity(intent, 0);
-            if (resolveInfo != null) {
-                startActivity(intent);
-            } });
+            if (getContext().getPackageManager().hasSystemFeature(PackageManager.FEATURE_NFC))
+            {
+                Intent intent = new Intent(Settings.ACTION_NFC_SETTINGS);
+                ResolveInfo resolveInfo = getActivity().getPackageManager().resolveActivity(intent, 0);
+                if (resolveInfo != null) {
+                    startActivity(intent);
+                }
+            }
+            else
+            {
+                Toast.makeText(mContext, "Device doesn't support nfc feature", Toast.LENGTH_SHORT).show();
+            }
+
+        });
         return view;
     }
 }

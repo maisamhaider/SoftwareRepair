@@ -19,12 +19,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.phone.repair.phone.cleaner.app_2020.R;
-import com.phone.repair.phone.cleaner.app_2020.utils.DrawingSimpleAct;
 
 import java.util.Locale;
 
@@ -147,9 +147,10 @@ public class HardwareTestingActivity extends AppCompatActivity implements View.O
 
                 IntentFilter iFilter = new IntentFilter( Intent.ACTION_HEADSET_PLUG );
                 getApplicationContext().registerReceiver( receiver, iFilter );
+
                 if (isHeadphoneConnected) {
                     isHeadphone_textView.setVisibility( View.VISIBLE );
-                    isHeadphone_textView.setText( "Headphone is unplugged" );
+                    isHeadphone_textView.setText( "Headphone is plugged" );
                     handler.postDelayed( () -> isHeadphone_textView.setVisibility( View.GONE ), 2000 );
                 } else {
                     isHeadphone_textView.setVisibility( View.VISIBLE );
@@ -174,7 +175,7 @@ public class HardwareTestingActivity extends AppCompatActivity implements View.O
                     }, 2000 );
                 } else if (bluetoothAdapter.isEnabled()) {
                     bluetoothState_textView.setVisibility( View.VISIBLE );
-                    bluetoothState_textView.setText( "bluetooth is On" );
+                    bluetoothState_textView.setText( "Bluetooth is on" );
                     handler.postDelayed( new Runnable() {
                         @Override
                         public void run() {
@@ -183,7 +184,7 @@ public class HardwareTestingActivity extends AppCompatActivity implements View.O
                     }, 2000 );
                 } else {
                     bluetoothState_textView.setVisibility( View.VISIBLE );
-                    bluetoothState_textView.setText( "bluetooth is Off" );
+                    bluetoothState_textView.setText( "Bluetooth is off" );
                     handler.postDelayed( new Runnable() {
                         @Override
                         public void run() {
@@ -191,7 +192,6 @@ public class HardwareTestingActivity extends AppCompatActivity implements View.O
                         }
                     }, 2000 );
                 }
-
                 break;
 
 
@@ -203,11 +203,16 @@ public class HardwareTestingActivity extends AppCompatActivity implements View.O
         @Override
         public void onReceive(Context context, Intent intent) {
             int isConnected = intent.getIntExtra( "state", -1 );
-            if (isConnected != -1) {
-                isHeadphoneConnected = true;
-            } else {
+            if (isConnected == 0)
+            {
                 isHeadphoneConnected = false;
             }
+            else if (isConnected ==1)
+            {
+                isHeadphoneConnected = true;
+            }
+            else
+                Toast.makeText(context, "Error", Toast.LENGTH_SHORT).show();
         }
     };
 

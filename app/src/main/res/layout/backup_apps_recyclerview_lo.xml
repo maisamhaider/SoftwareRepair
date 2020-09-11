@@ -76,6 +76,7 @@
                 android:layout_height="45dp" />
 
             <LinearLayout
+                android:layout_marginStart="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -84,9 +85,7 @@
                     android:id="@+id/backupAppsName_Tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginBottom="-2dp"
-                    android:gravity="center"
+                     android:gravity="start"
                     android:maxWidth="150dp"
                     android:maxLines="1"
                     android:text="names"
@@ -98,9 +97,7 @@
                     android:id="@+id/backUpPackageName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginBottom="-2dp"
-                    android:gravity="center"
+                     android:gravity="start"
                     android:maxWidth="150dp"
                     android:maxLines="1"
                     android:text="names"

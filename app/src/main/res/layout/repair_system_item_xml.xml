@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.2" />
+        app:layout_constraintGuide_percent="0.24" />
 
     <View
         android:id="@+id/view22"
@@ -46,13 +46,14 @@
 
 
     <TextView
+        android:id="@+id/textView63"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
-        android:text="install Time:"
+        android:text="Installed Time:"
         android:textColor="@color/colorTextTwo"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/guideline16"
         app:layout_constraintStart_toStartOf="@+id/view22"
         app:layout_constraintTop_toBottomOf="@+id/view22" />
 
@@ -60,10 +61,10 @@
         android:id="@+id/app_installedTime_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
+        android:layout_marginStart="5dp"
         android:textColor="@color/colorTextOne"
-        app:layout_constraintStart_toStartOf="@+id/guideline16"
+        app:layout_constraintStart_toEndOf="@+id/textView63"
         app:layout_constraintTop_toBottomOf="@+id/appName_tv" />
 
     <View

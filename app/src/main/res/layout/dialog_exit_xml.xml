@@ -55,7 +55,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
-            android:weightSum="2"
+            android:weightSum="3"
             android:orientation="horizontal">
 
 
@@ -75,6 +75,21 @@
                 tools:ignore="ButtonStyle" />
 
             <Button
+                android:id="@+id/rateUs_btn"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/blue_stroke_white_bg_button_bg"
+                android:textColor="@color/colorTextOne"
+                android:text="Rate Us"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+
+                android:textSize="15sp"
+                tools:ignore="ButtonStyle" />
+            <Button
                 android:id="@+id/no"
                 android:layout_width="100dp"
                 android:layout_height="50dp"
@@ -86,7 +101,6 @@
                 android:textColor="@color/colorTextOne"
                 android:text="No"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
-
                 android:textSize="15sp"
                 tools:ignore="ButtonStyle" />
 

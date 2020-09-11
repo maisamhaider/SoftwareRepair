@@ -3,50 +3,47 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:background="@android:color/white"
-    android:padding="25dp">
-
-    <com.skydoves.progressview.ProgressView
-        android:id="@+id/progressView1"
-        android:layout_width="110dp"
-        android:layout_height="180dp"
-        app:layout_constraintBottom_toBottomOf="@+id/circularProgressBar"
-        app:layout_constraintEnd_toEndOf="@+id/circularProgressBar"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="@+id/circularProgressBar"
-        app:layout_constraintTop_toTopOf="@+id/circularProgressBar"
-        app:layout_constraintVertical_bias="0.497"
-        app:progressView_autoAnimate="true"
-        app:progressView_colorBackground="@color/colorProgressGg"
-        app:progressView_colorProgress="@color/colorPrimaryDark"
-        app:progressView_labelColorInner="@android:color/white"
-        app:progressView_labelSize="20sp"
-        app:progressView_labelSpace="10dp"
-        app:progressView_labelTypeface="bold"
-        app:progressView_progressFromPrevious="true"
-        app:progressView_radius="10dp" />
+     >
 
 
     <com.mikhaellopez.circularprogressbar.CircularProgressBar
         android:id="@+id/circularProgressBar"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        app:cpb_background_progressbar_color="@color/colorProgressGg"
+        android:layout_width="280dp"
+        android:layout_height="280dp"
+         app:cpb_background_progressbar_color="@color/colorProgressGg"
         app:cpb_background_progressbar_width="5dp"
         app:cpb_progress_direction="to_right"
         app:cpb_progressbar_color="@color/colorRed"
         app:cpb_round_border="false"
-        app:layout_constraintBottom_toBottomOf="parent"
+         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <com.skydoves.progressview.ProgressView
+        android:id="@+id/progressView1"
+        android:layout_width="110dp"
+        android:layout_height="160dp"
+        app:layout_constraintBottom_toBottomOf="@+id/circularProgressBar"
+        app:layout_constraintEnd_toEndOf="@+id/circularProgressBar"
+        app:layout_constraintStart_toStartOf="@+id/circularProgressBar"
+        app:layout_constraintTop_toTopOf="@+id/circularProgressBar"
+        app:progressView_autoAnimate="true"
+        app:progressView_colorBackground="@color/colorProgressGg"
+        app:progressView_colorProgress="@color/colorPrimaryDark"
+        app:progressView_labelColorInner="@android:color/white"
+        app:progressView_labelSize="13sp"
+        app:progressView_labelSpace="10dp"
+        app:progressView_orientation="vertical"
+        app:progressView_progressFromPrevious="true"
+        app:progressView_radius="5dp" />
+
     <View
         android:id="@+id/view"
-        android:layout_width="60dp"
-        android:layout_height="20dp"
+        android:layout_width="50dp"
+        android:layout_height="18dp"
         android:layout_marginBottom="4dp"
         android:background="@drawable/battery_top_bg"
         app:layout_constraintBottom_toTopOf="@+id/progressView1"

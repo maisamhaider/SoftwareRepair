@@ -48,7 +48,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    android:text="MANUFACTURER:"
+                    android:text="MANUFACTURER"
                     android:textColor="@color/colorTextTwo"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -127,7 +127,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    android:text="Android Version"
+                    android:text="ANDROID VERSION"
                     android:textColor="@color/colorTextTwo"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -625,6 +625,7 @@
                 android:background="@android:color/white"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginBottom="10dp"
                 android:layout_marginTop="10dp">
 
                 <TextView

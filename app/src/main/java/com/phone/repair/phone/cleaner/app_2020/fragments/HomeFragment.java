@@ -7,21 +7,19 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.content.pm.ResolveInfo;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
-import android.net.Uri;
 import android.os.BatteryManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.PopupWindow;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.annotation.Nullable;
 
 import com.phone.repair.phone.cleaner.app_2020.R;
 import com.phone.repair.phone.cleaner.app_2020.activities.BackupAppsActivity;
@@ -37,7 +35,6 @@ import com.phone.repair.phone.cleaner.app_2020.activities.RootCheckerActivity;
 import com.phone.repair.phone.cleaner.app_2020.utils.MathCalculationsUtil;
 import com.phone.repair.phone.cleaner.app_2020.utils.StorageUtility;
 
-import antonkozyriatskyi.circularprogressindicator.BuildConfig;
 import antonkozyriatskyi.circularprogressindicator.CircularProgressIndicator;
 
 public class HomeFragment extends BaseFrag {
@@ -46,7 +43,7 @@ public class HomeFragment extends BaseFrag {
     MathCalculationsUtil mathCalculationsUtil;
     CircularProgressIndicator batteryRoundCorner_pb, storageRoundCorner_pb, homeRam_cpb;
     TextView batteryProgressBarPercent_tv;
-    ImageView homeMenu_iv;
+    SharedPreferences preferences;
 
     public static HomeFragment newInstance() {
         return new HomeFragment();
@@ -74,7 +71,7 @@ public class HomeFragment extends BaseFrag {
         batteryRoundCorner_pb = view.findViewById(R.id.batteryRoundCorner_pb);
         storageRoundCorner_pb = view.findViewById(R.id.storageRoundCorner_pb);
         batteryProgressBarPercent_tv = view.findViewById(R.id.batteryProgressBarPercent_tv);
-        homeMenu_iv = view.findViewById(R.id.homeMenu_iv);
+        preferences = getContext().getSharedPreferences("myPref", Context.MODE_PRIVATE);
 
 
         view.findViewById(R.id.homeBatteryIntent_view).setOnClickListener(v -> {
@@ -106,11 +103,47 @@ public class HomeFragment extends BaseFrag {
             newActivityAds(new EmptyFoldersActivity());
         });
         view.findViewById(R.id.batterySaver_cl).setOnClickListener(v -> {
-            Intent intent = new Intent(Settings.ACTION_BATTERY_SAVER_SETTINGS);
-            ResolveInfo resolveInfo = getActivity().getPackageManager().resolveActivity(intent, 0);
-            if (resolveInfo != null) {
-                startActivity(intent);
+
+//            Intent intent = new  Intent();
+            if (Build.MANUFACTURER.toLowerCase().matches("samsung")) {
+
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP_MR1) {
+                    Intent intent = new Intent(Settings.ACTION_BATTERY_SAVER_SETTINGS);
+                    ResolveInfo resolveInfo = getActivity().getPackageManager().resolveActivity(intent, 0);
+                    if (resolveInfo != null) {
+                        startActivity(intent);
+                    } else {
+                        Toast.makeText(getActivity(), "your device doesn't support this power saver", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    Toast.makeText(getActivity(), "your device doesn't support this power saver", Toast.LENGTH_SHORT).show();
+                }
+            } else {
+
+                if (Build.MANUFACTURER.toLowerCase().matches("huawei")) {
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                        Toast.makeText(mContext, "Device does not support this feature", Toast.LENGTH_SHORT).show();
+                    } else {
+                        startActivity(new Intent(Settings.ACTION_BATTERY_SAVER_SETTINGS));
+                    }
+                }
+
+
             }
+
+
+//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP_MR1) {
+//                Intent intent = null;
+//                intent = new Intent(Settings.ACTION_BATTERY_SAVER_SETTINGS);   //   Settings.ACTION_BATTERY_SAVER_SETTINGS
+//                ResolveInfo resolveInfo = getActivity().getPackageManager().resolveActivity(intent,0 );
+//                 if (resolveInfo != null) {
+//                    startActivity(intent);
+//                } else {
+//                    Toast.makeText(getActivity(), "your device doesn't support this power saver", Toast.LENGTH_SHORT).show();
+//                }
+//            }else {
+//                Toast.makeText(getActivity(), "your device doesn't support this power saver", Toast.LENGTH_SHORT).show();
+//            }
         });
 
         view.findViewById(R.id.backupApp_cl).setOnClickListener(v -> {
@@ -129,70 +162,21 @@ public class HomeFragment extends BaseFrag {
             newActivityAds(new RootCheckerActivity());
 
         });
-        homeMenu_iv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                PopupWindow popupWindowObj = popupWindowDisplay();
-                popupWindowObj.showAsDropDown(homeMenu_iv);
-            }
-        });
+
 
         ramAndStorageFun();
 
         return view;
     }
 
-    private PopupWindow popupWindowDisplay() {
-        final PopupWindow popupWindow = new PopupWindow(getContext());
-        // inflate your layout or dynamically add view
-        final LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-
-        View view = inflater.inflate(R.layout.home_menu_xml, null);
-
-        LinearLayout share_ll = view.findViewById(R.id.share_ll);
-        LinearLayout rateUs_ll = view.findViewById(R.id.rateUs_ll);
-
-        popupWindow.setFocusable(true);
-        popupWindow.setWidth(WindowManager.LayoutParams.WRAP_CONTENT);
-        popupWindow.setHeight(WindowManager.LayoutParams.WRAP_CONTENT);
-        popupWindow.setContentView(view);
-        popupWindow.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-
-
-        share_ll.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                shareUs();
-            }
-        });
-        rateUs_ll.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + getActivity().getPackageName())));
-            }
-        });
-
-        popupWindow.setOnDismissListener(new PopupWindow.OnDismissListener() {
-            @Override
-            public void onDismiss() {
-            }
-        });
-
-        return popupWindow;
-    }
-
-    public void shareUs() {
-        Intent sendIntent = new Intent();
-        sendIntent.setAction(Intent.ACTION_SEND);
-        sendIntent.putExtra(Intent.EXTRA_TEXT,
-                "Hey check out my app at: https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID);
-        sendIntent.setType("text/plain");
-        startActivity(sendIntent);
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        int rq = requestCode;
+        int rc = resultCode;
     }
 
     private void ramAndStorageFun() {
-
-
 //for Ram
         ActivityManager am = (ActivityManager) getActivity().getSystemService(Context.ACTIVITY_SERVICE);
         ActivityManager.MemoryInfo mi = new ActivityManager.MemoryInfo();
