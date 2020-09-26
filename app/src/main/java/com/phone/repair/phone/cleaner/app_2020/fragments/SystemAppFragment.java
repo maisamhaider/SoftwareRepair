@@ -12,25 +12,27 @@ import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.phone.repair.phone.cleaner.app_2020.R;
 import com.phone.repair.phone.cleaner.app_2020.adapters.ApplicationsAdapter;
 import com.phone.repair.phone.cleaner.app_2020.asynctasks.ApplicationsTask;
+import com.phone.repair.phone.cleaner.app_2020.interfaces.IsTrueOrFalse;
 
-public class SystemAppFragment extends BaseFrag {
+public class SystemAppFragment extends BaseFrag implements IsTrueOrFalse {
 
     private ApplicationsAdapter applicationsAdapter;
     private RecyclerView systemApps_rv;
     private EditText searchSystemApp_ET;
     private InputMethodManager inputMethodManager;
-
+    private TextView noAppFound_tv;
     public SystemAppFragment() {
         // Required empty public constructor
     }
 
-    public static SystemAppFragment newInstance(String param1, String param2) {
+    public static SystemAppFragment newInstance() {
         SystemAppFragment fragment = new SystemAppFragment();
         return fragment;
     }
@@ -50,8 +52,10 @@ public class SystemAppFragment extends BaseFrag {
 
         systemApps_rv = view.findViewById(R.id.systemApps_rv);
         searchSystemApp_ET = view.findViewById(R.id.searchSystemApp_ET);
+        noAppFound_tv = view.findViewById(R.id.noAppFound_tv);
 
         applicationsAdapter = new ApplicationsAdapter(getContext() );
+        applicationsAdapter.initIsTrueInterface(this);
 
 
         inputMethodManager = (InputMethodManager) getContext().getSystemService( Context.INPUT_METHOD_SERVICE );
@@ -101,5 +105,17 @@ public class SystemAppFragment extends BaseFrag {
     public void onPause() {
         super.onPause();
         inputMethodManager.hideSoftInputFromWindow( searchSystemApp_ET.getWindowToken(), 0 );
+    }
+
+    @Override
+    public void isTrue(boolean isT) {
+        if (isT)
+        {
+            noAppFound_tv.setVisibility(View.VISIBLE);
+        }
+        else
+        {
+            noAppFound_tv.setVisibility(View.GONE);
+        }
     }
 }

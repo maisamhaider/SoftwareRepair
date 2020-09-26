@@ -24,6 +24,7 @@ import com.phone.repair.phone.cleaner.app_2020.R;
 import com.phone.repair.phone.cleaner.app_2020.activities.EachAppInfo;
 import com.phone.repair.phone.cleaner.app_2020.annotations.StringsAnnotations;
 import com.phone.repair.phone.cleaner.app_2020.fragments.BaseFrag;
+import com.phone.repair.phone.cleaner.app_2020.interfaces.IsTrueOrFalse;
 import com.phone.repair.phone.cleaner.app_2020.utils.ApplicationUtility;
 
 import java.util.ArrayList;
@@ -40,6 +41,7 @@ public class ApplicationsAdapter extends RecyclerView.Adapter<ApplicationsAdapte
     private ApplicationUtility applicationUtility;
     boolean isSystemApp = false;
     BaseFrag baseFrag;
+    IsTrueOrFalse isTrueOrFalse;
 
     @SuppressLint("NewApi")
     public ApplicationsAdapter(Context context) {
@@ -190,7 +192,17 @@ public class ApplicationsAdapter extends RecyclerView.Adapter<ApplicationsAdapte
         protected void publishResults(CharSequence constraint, FilterResults results) {
             appsList.clear();
             appsList.addAll((Collection<? extends String>) results.values);
+            if (appsList.isEmpty())
+            {isTrueOrFalse.isTrue(true);}
+            else {
+                isTrueOrFalse.notify();
+            }
             notifyDataSetChanged();
         }
     };
+    public void initIsTrueInterface(IsTrueOrFalse isTrueOrFalse)
+    {
+        this.isTrueOrFalse = isTrueOrFalse;
+    }
+
 }

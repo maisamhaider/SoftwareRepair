@@ -50,7 +50,7 @@ dependencies {
     implementation 'the.bot.box:appusagemonitor:1.0.1'
 
     //glide lab
-    implementation 'com.github.bumptech.glide:glide:4.10.0'
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
 
     // progress bar dependency
     implementation 'com.akexorcist:RoundCornerProgressBar:2.0.3'
@@ -68,6 +68,6 @@ dependencies {
     //    ios dialog
     implementation 'com.gmail.samehadar:iosdialog:1.0'
 //ads
-    implementation 'com.google.android.gms:play-services-ads:19.3.0'
+    implementation 'com.google.android.gms:play-services-ads:19.4.0'
 
 }

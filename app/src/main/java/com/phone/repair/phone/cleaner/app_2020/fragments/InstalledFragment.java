@@ -12,20 +12,22 @@ import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.phone.repair.phone.cleaner.app_2020.R;
+import com.phone.repair.phone.cleaner.app_2020.*;
 import com.phone.repair.phone.cleaner.app_2020.adapters.ApplicationsAdapter;
 import com.phone.repair.phone.cleaner.app_2020.asynctasks.ApplicationsTask;
+import com.phone.repair.phone.cleaner.app_2020.interfaces.IsTrueOrFalse;
 
 
-public class InstalledFragment extends BaseFrag {
+public class InstalledFragment extends BaseFrag  implements IsTrueOrFalse {
     private ApplicationsAdapter applicationsAdapter;
     private RecyclerView installedApps_rv;
     private EditText searchInstalled_ET;
     private InputMethodManager inputMethodManager;
-
+    private TextView noAppsFound_tv;
     public InstalledFragment() {
         // Required empty public constructor
     }
@@ -49,9 +51,10 @@ public class InstalledFragment extends BaseFrag {
 
         installedApps_rv = view.findViewById(R.id.installedApps_rv);
         searchInstalled_ET = view.findViewById(R.id.searchInstalled_ET);
+        noAppsFound_tv = view.findViewById(R.id.noAppsFound_tv);
 
         applicationsAdapter = new ApplicationsAdapter(getContext());
-
+        applicationsAdapter.initIsTrueInterface(this);
 
         inputMethodManager = (InputMethodManager) getContext().getSystemService( Context.INPUT_METHOD_SERVICE );
         searchInstalled_ET.setImeOptions( EditorInfo.IME_ACTION_SEARCH );
@@ -101,5 +104,17 @@ public class InstalledFragment extends BaseFrag {
     public void onPause() {
         super.onPause();
         inputMethodManager.hideSoftInputFromWindow( searchInstalled_ET.getWindowToken(), 0 );
+    }
+
+    @Override
+    public void isTrue(boolean isT) {
+        if (isT)
+        {
+            noAppsFound_tv.setVisibility(View.VISIBLE);
+        }
+        else
+        {
+            noAppsFound_tv.setVisibility(View.GONE);
+        }
     }
 }

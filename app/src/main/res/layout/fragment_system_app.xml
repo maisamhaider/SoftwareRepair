@@ -1,59 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@android:color/white"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     tools:context="com.phone.repair.phone.cleaner.app_2020.fragments.SystemAppFragment">
-    <androidx.cardview.widget.CardView
-        app:cardCornerRadius="6dp"
-        android:layout_margin="16dp"
-        android:layout_width="match_parent"
-        android:layout_height="50dp">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center">
+            android:layout_height="50dp"
+            android:layout_margin="16dp"
+            app:cardCornerRadius="6dp">
 
-            <EditText
-                android:id="@+id/searchSystemApp_ET"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:background="@android:color/transparent"
-                android:gravity="center|start"
-                android:hint="Search App... "
-                android:paddingStart="10dp"
-                android:textColorHint="#C8CAD4"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/imageView33"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
 
-
-
-            <ImageView
-                android:id="@+id/imageView33"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_marginEnd="10dp"
-                android:src="@drawable/ic_search"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                <EditText
+                    android:id="@+id/searchSystemApp_ET"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:gravity="center|start"
+                    android:hint="Search App... "
+                    android:paddingStart="10dp"
+                    android:maxLines="1"
+                    android:maxLength="20"
+                    android:textColorHint="#C8CAD4"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/imageView33"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
 
 
-    </androidx.cardview.widget.CardView>
+                <ImageView
+                    android:id="@+id/imageView33"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/ic_search"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/systemApps_rv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        </androidx.cardview.widget.CardView>
 
-</LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/systemApps_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/noAppFound_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No App Found"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
